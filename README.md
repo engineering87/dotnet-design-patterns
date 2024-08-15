@@ -1,4 +1,4 @@
-# Design Patterns in .NET C#
+# Design Patterns Implemented in .NET C#
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository showcases .NET C# Design Patterns. The patterns can be browsed by their high-level descriptions or by looking at their source code. Each design pattern category has its own formal description and each pattern is represented with concrete examples in order to prove the effectiveness of their use.
