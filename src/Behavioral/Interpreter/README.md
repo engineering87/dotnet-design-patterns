@@ -41,16 +41,17 @@ Provides a common interface for all concrete expressions.
 
 * **Terminal Expressions**:
 `FilenameFilter`: A terminal expression that checks if a file name contains a specific substring.
-- Constructor: Takes the filename substring to search for.
-- Interpret Method: Checks if the file name contains the substring.
+    - Constructor: Takes the filename substring to search for.
+    - Interpret Method: Checks if the file name contains the substring.
 
-* **ExtensionFilter**: A terminal expression that checks if a file has a specific extension.
-- Constructor: Takes the file extension to search for.
-- Interpret Method: Checks if the file extension matches the given extension.
+* **ExtensionFilter**: 
+`ExtensionFilter`: A terminal expression that checks if a file has a specific extension.
+    - Constructor: Takes the file extension to search for.
+    - Interpret Method: Checks if the file extension matches the given extension.
 
 * **Context**:
-Definition: `File` represents a file with a name and extension.
-Purpose: The object that is interpreted by the expressions. It holds the data that the expressions operate on.
+`File` represents a file with a name and extension.
+The object that is interpreted by the expressions. It holds the data that the expressions operate on.
 
 ## Usage
 ```csharp

@@ -52,9 +52,9 @@ This allows grouping multiple operations into a single command, which can then b
 `FileSystemReceiver` class simulates the file system in an operating system. It provides methods like `CreateFile`, `WriteFile`, and `DeleteFile` to perform actual operations.
 
 * **Concrete Command Classes**:
-- CreateFileCommand: Encapsulates the action of creating a file.
-- WriteFileCommand: Encapsulates the action of writing content to a file.
-- DeleteFileCommand: Encapsulates the action of deleting a file.
+    - `CreateFileCommand`: Encapsulates the action of creating a file.
+    - `WriteFileCommand`: Encapsulates the action of writing content to a file.
+    - `DeleteFileCommand`: Encapsulates the action of deleting a file.
 
 Each of these classes contains a reference to the `FileSystemReceiver` and uses it to perform the specific operation when Execute is called. They also implement Undo to reverse the operation.
 

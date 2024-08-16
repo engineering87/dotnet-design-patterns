@@ -38,7 +38,7 @@ Each colleague object can be developed, tested, and maintained independently, wi
 
 * **Concrete Mediator**:
 `FileManager` coordinates the communication between the `FileExplorer`, `FileOperationHandler`, and `Logger`. It ensures that these components do not need to reference each other directly.
-It has methods like `CreateFile`, `OpenFile`, and `DeleteFile`, which delegate the work to the FileOperationHandler.
+It has methods like `CreateFile`, `OpenFile`, and `DeleteFile`, which delegate the work to the `FileOperationHandler`.
 
 * **Colleagues**:
 `FileExplorer`: Represents the user interface or the component that interacts with the user. It selects files and invokes operations like creating, opening, or deleting them.

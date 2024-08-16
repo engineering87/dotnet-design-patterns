@@ -53,12 +53,12 @@ Purpose: Ensures that all elements (files and directories) can be treated unifor
 
 * **Concrete Elements**:
 `File`: Represents a file with a name and implements the `IFileSystemElement` interface.
-`Directory`: Represents a directory that can contain files and subdirectories. It implements both IFileSystemElement and IFileSystemCollection interfaces.
+`Directory`: Represents a directory that can contain files and subdirectories. It implements both `IFileSystemElement` and `IFileSystemCollection` interfaces.
 `AddElement` Method: Adds elements (files or subdirectories) to the directory.
 `CreateIterator` Method: Returns an iterator for traversing the directory’s elements.
 
-* **Concrete Iterator (FileSystemIterator)**:
-Definition: Implements the IIterator<IFileSystemElement> interface and provides methods to traverse the collection.
+* **Concrete Iterator**:
+`FileSystemIterator` implements the `IIterator<IFileSystemElement>` interface and provides methods to traverse the collection.
 Purpose: Handles the actual iteration logic for a list of file system elements.
 
 ## Usage
