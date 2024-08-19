@@ -4,16 +4,17 @@ namespace DotnetDesignPatterns.Creational.Singleton.Singleton
 {
     public sealed class LazySingleton
     {
-        // Lazy<T> è thread-safe per definizione e garantisce la creazione dell'istanza una sola volta.
+        // Lazy<T> is thread-safe by definition and ensures that the instance is created only once.
         private static readonly Lazy<LazySingleton> _instance = new(() => new LazySingleton());
 
-        // Costruttore privato per evitare l'uso del costruttore esterno.
+        // Private constructor to prevent instantiation from outside
         private LazySingleton()
         {
-            // Inizializzazione delle risorse o configurazioni se necessario
+            // Initialize the singleton instance
+            Console.WriteLine("Singleton instance created");
         }
 
-        // Proprietà pubblica per accedere all'istanza
+        // Public static method to get the singleton instance
         public static LazySingleton Instance
         {
             get
@@ -22,7 +23,7 @@ namespace DotnetDesignPatterns.Creational.Singleton.Singleton
             }
         }
 
-        // Metodo dimostrativo per il Singleton
+        // Example method
         public void DoSomething()
         {
             Console.WriteLine("Singleton instance is working.");

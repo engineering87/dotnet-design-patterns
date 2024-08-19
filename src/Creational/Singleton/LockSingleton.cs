@@ -4,33 +4,40 @@ namespace DotnetDesignPatterns.Creational.Singleton
 {
     public sealed class LockSingleton
     {
+        // Private static instance of the Singleton class
         private static LockSingleton? _instance = null;
+        // Object used for locking
         private static readonly object _lock = new();
 
-        // Costruttore privato per evitare l'uso del costruttore esterno.
+        // Private constructor to prevent instantiation from outside
         private LockSingleton()
         {
-            // Inizializzazione delle risorse o configurazioni se necessario
+            // Initialize the singleton instance
+            Console.WriteLine("Singleton instance created");
         }
 
-        // Proprietà pubblica per accedere all'istanza
+        // Public static method to get the singleton instance
         public static LockSingleton Instance
         {
             get
             {
-                // Doppio controllo del lock per evitare un blocco non necessario
+                // Check if the instance is null
                 if (_instance == null)
                 {
+                    // Lock to ensure that only one thread can enter this block at a time
                     lock (_lock)
                     {
+                        // Double-check if the instance is still null
+                        // Create the singleton instance
                         _instance ??= new LockSingleton();
                     }
                 }
+                // Return the singleton instance
                 return _instance;
             }
         }
 
-        // Metodo dimostrativo per il Singleton
+        // Example method
         public void DoSomething()
         {
             Console.WriteLine("Singleton instance is working.");

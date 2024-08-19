@@ -1,9 +1,9 @@
 # Singleton Design Pattern
-
 The Singleton Design Pattern is a creational design pattern that ensures a class has only one instance and provides a global point of access to that instance. This pattern is useful when exactly one object is needed to coordinate actions across the system.
+This repository presents two solutions for creating a Singleton in C#: the **Lazy** approach and the **Lock-based** approach.
+Both methods ensure that only one instance of the Singleton class is created, but the Lazy approach is generally preferred for its simplicity and built-in thread safety.
 
 ## Key Concepts of the Singleton Pattern
-
 1. Single Instance:
 The primary goal of the Singleton Pattern is to restrict the instantiation of a class to a single instance. This is useful when exactly one object is needed to coordinate actions across the system.
 The class itself controls its instantiation, ensuring that only one instance is created.
@@ -29,7 +29,6 @@ In multithreaded applications, thread safety ensures that the Singleton instance
 Various techniques like synchronization, double-checked locking, or using thread-safe constructs (e.g., `Lazy<T>` in C#) are employed to maintain thread safety.
 
 ## Code Explanation
-
 * **Lazy Initialization**:
 The `Lazy<T>` property ensures that the Singleton instance is only created when it is first accessed. This approach avoids unnecessary resource usage by delaying the creation of the object until it's actually needed.
 
@@ -46,7 +45,7 @@ The class constructor is private, preventing external code from creating multipl
 The `DoSomething` method is examples of how the Singleton might manage shared resources. For instance, a database connection or file access could be centralized in this Singleton, ensuring that resources are managed correctly and safely.
 
 ## Usage
-
+### Lazy Singleton
 ```csharp
 class Program
 {
@@ -54,6 +53,22 @@ class Program
     {
         // Accessing the singleton instance
         LazySingleton singleton = LazySingleton.Instance;
+
+        // Using the resources managed by the singleton
+        singleton.DoSomething();
+    }
+}
+```
+
+## Usage
+### Lock Singleton
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Access the singleton instance
+        LockSingleton singleton = LockSingleton.Instance;
 
         // Using the resources managed by the singleton
         singleton.DoSomething();
