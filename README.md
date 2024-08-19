@@ -10,18 +10,18 @@ This repository showcases .NET C# Design Patterns. The patterns can be browsed b
   - [Creational Patterns](#creational-patterns)
   - [Structural Patterns](#structural-patterns)
   - [Behavioral Patterns](#behavioral-patterns)
-- [Repository Layout](#repository-layout)
 - [Importance of Design Patterns](#importance-of-design-patterns)
 - [Why Use Design Patterns?](#why-use-design-patterns)
+- [Repository Layout](#repository-layout)
 - [How to Contribute](#how-to-contribute)
 - [Licensee](#licensee)
 - [Contact](#contact)
 
 ## What Are Design Patterns?
-Design patterns are standardized solutions to common problems encountered in software design. They provide reusable templates for solving recurring design issues in a way that promotes best practices and improves the overall architecture of a software system. Design patterns are not code snippets but rather general concepts that can be adapted to specific needs. They help in creating systems that are modular, maintainable, and scalable by defining best practices for structuring code and handling various aspects of software design.
+Design patterns are **standardized solutions** to common problems encountered in Software Design. They provide reusable templates for solving recurring design issues in a way that promotes best practices and improves the overall architecture of a Software System. Design patterns are not code snippets but rather general concepts that can be adapted to specific needs. They help in creating systems that are **modular**, **maintainable**, and **scalable** by defining best practices for structuring code and handling various aspects of software design.
 
 ## GoF Design Patterns
-The **GoF (Gang of Four)** design patterns refer to a collection of 23 design patterns that were introduced in the book *"Design Patterns: Elements of Reusable Object-Oriented Software"* published in 1994 by four authors: Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. This book became a cornerstone in the field of software engineering and introduced the concept of design patterns as a systematic approach to solving common design problems.
+The **GoF (Gang of Four)** design patterns refer to a collection of 23 design patterns that were introduced in the book **"Design Patterns: Elements of Reusable Object-Oriented Software"** published in 1994 by four authors: *Erich Gamma*, *Richard Helm*, *Ralph Johnson*, and *John Vlissides*. This book became a cornerstone in the field of software engineering and introduced the concept of design patterns as a systematic approach to solving common design problems.
 
 ## Categories of Design Patterns
 Design patterns are typically categorized into three main types based on their role and purpose:
@@ -38,9 +38,6 @@ Structural patterns focus on the composition of classes and objects to form larg
 
 ### Behavioral Patterns
 Behavioral patterns focus on the interactions between objects and how responsibilities are distributed among them. They define how objects communicate and collaborate to perform specific tasks.
-
-## Repository Layout
-Each design pattern category has its own directory and each pattern inside has its own folder, its description and its source code.
 
 ## Importance of Design Patterns
 By leveraging design patterns, developers can create more robust, maintainable, and scalable software systems. Patterns provide a framework for solving common design problems and ensure that solutions adhere to best practices in software engineering.
@@ -62,6 +59,9 @@ Patterns offer ways to handle changing requirements and evolving designs by deco
 
 ## Why Use Design Patterns?
 Design patterns act as a toolbox of proven solutions, helping developers create better, more efficient, and maintainable software. They offer a structured approach to problem-solving, improve code readability, and facilitate collaboration among team members.
+
+## Repository Layout
+Each design pattern category has its own directory and each pattern inside has its own folder, its description and its source code.
 
 ## How to Contribute
 Thank you for considering to help out with the source code!
