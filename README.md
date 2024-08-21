@@ -67,6 +67,10 @@ Each design pattern category has its own directory and each pattern inside has i
 Thank you for considering to help out with the source code!
 If you'd like to contribute, please fork, fix, commit and send a pull request for the maintainers to review and merge into the main code base.
 
+ * [Setting up Git](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git)
+ * [Fork the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
+ * [Open an issue](https://github.com/engineering87/dotnet-design-patterns/issues) if you encounter a bug or have a suggestion for improvements/features
+
 ## Licensee
 Repository source code is available under MIT License, see license in the source.
 
