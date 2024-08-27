@@ -14,6 +14,7 @@ This repository showcases .NET C# Design Patterns. The patterns can be browsed b
   - [Behavioral Patterns](#behavioral-patterns)
 - [Importance of Design Patterns](#importance-of-design-patterns)
 - [Why Use Design Patterns?](#why-use-design-patterns)
+- [Patterns vs. Anti-patterns](#patterns-vs-anti-patterns)
 - [Repository Layout](#repository-layout)
 - [How to Contribute](#how-to-contribute)
 - [Licensee](#licensee)
@@ -61,6 +62,11 @@ Patterns offer ways to handle changing requirements and evolving designs by deco
 
 ## Why Use Design Patterns?
 Design patterns act as a toolbox of proven solutions, helping developers create better, more efficient, and maintainable software. They offer a structured approach to problem-solving, improve code readability, and facilitate collaboration among team members.
+
+## Patterns vs. Anti-patterns
+Design patterns and anti-patterns in programming are like two sides of the same coin. Design patterns address certain recurring problems faced by the programmers. Over the years, these patterns have been improved and are effective in the development of software that is manageable, flexible, and efficient. These patterns represent standard operating procedures that save the developers time and direct them to produce orderly, predictable, and sound code.
+Conversely, anti-patterns are flawed strategies that may appear to be reasonably good resolutions but tend to backfire big time in the long run. Derived from fallacies, inexperience, or an overzealous desire to seek instant gratification, these anti-patterns are often the result of the implementation of practices that make sense at the time but create problems and added stress down the line. It is imperative that the developers are able to locate and define these types of behavior since they may render the system hard to maintain, enhance, or even be understood.
+Particular anti-patterns present themselves in the context of certain conditions, i.e. stress to deliver rendering sub-optimal architectural designs being made or lack of effective interaction/interrelation comprehension among team members. Such conditions may lead to the spread of substandard designs causing extensive bugs in the codebase and making new code integration very hard.
 
 ## Repository Layout
 Each design pattern category has its own directory and each pattern inside has its own folder, its description and its source code.
