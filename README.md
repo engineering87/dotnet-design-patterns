@@ -1,6 +1,7 @@
 # Design Patterns Implemented in .NET C#
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![issues - dotnet-design-patterns](https://img.shields.io/github/issues/engineering87/dotnet-design-patterns)](https://github.com/engineering87/dotnet-design-patterns/issues)
+[![Language - C#](https://img.shields.io/static/v1?label=Language&message=C%23&color=blueviolet)](https://dotnet.microsoft.com/it-it/languages/csharp)
 [![stars - dotnet-design-patterns](https://img.shields.io/github/stars/engineering87/dotnet-design-patterns?style=social)](https://github.com/engineering87/dotnet-design-patterns)
 
 This repository showcases .NET C# Design Patterns. The patterns can be browsed by their high-level descriptions or by looking at their source code. Each design pattern category has its own formal description and each pattern is represented with concrete examples in order to prove the effectiveness of their use.
@@ -17,6 +18,7 @@ This repository showcases .NET C# Design Patterns. The patterns can be browsed b
 - [Patterns vs. Anti-patterns](#patterns-vs-anti-patterns)
 - [Repository Layout](#repository-layout)
 - [How to Contribute](#how-to-contribute)
+- [Examples and Use Cases](#examples-and-use-cases)
 - [Licensee](#licensee)
 - [Contact](#contact)
 
@@ -64,12 +66,27 @@ Patterns offer ways to handle changing requirements and evolving designs by deco
 Design patterns act as a toolbox of proven solutions, helping developers create better, more efficient, and maintainable software. They offer a structured approach to problem-solving, improve code readability, and facilitate collaboration among team members.
 
 ## Patterns vs. Anti-patterns
-Design patterns and anti-patterns in programming are like two sides of the same coin. Design patterns address certain recurring problems faced by the programmers. Over the years, these patterns have been improved and are effective in the development of software that is manageable, flexible, and efficient. These patterns represent standard operating procedures that save the developers time and direct them to produce orderly, predictable, and sound code.
-Conversely, anti-patterns are flawed strategies that may appear to be reasonably good resolutions but tend to backfire big time in the long run. Derived from fallacies, inexperience, or an overzealous desire to seek instant gratification, these anti-patterns are often the result of the implementation of practices that make sense at the time but create problems and added stress down the line. It is imperative that the developers are able to locate and define these types of behavior since they may render the system hard to maintain, enhance, or even be understood.
-Particular anti-patterns present themselves in the context of certain conditions, i.e. stress to deliver rendering sub-optimal architectural designs being made or lack of effective interaction/interrelation comprehension among team members. Such conditions may lead to the spread of substandard designs causing extensive bugs in the codebase and making new code integration very hard.
+Design patterns and anti-patterns play crucial roles in software development, each representing opposing approaches to solving programming challenges:
+- **Design Patterns**:
+  - Provide standard solutions for recurring problems in programming.
+  - Have been developed and refined over time to create software that is manageable, flexible, and efficient.
+  - Help developers produce clean, predictable, and high-quality code.
+
+- **Anti-Patterns**:
+  - Represent flawed strategies that initially seem like valid solutions but lead to significant problems over time.
+  - Stem from logical fallacies, inexperience, or a desire for quick fixes.
+  - Can result in systems that are difficult to maintain, improve, or understand.
+
+- **Causes of Anti-Patterns**:
+  - Pressure to deliver quickly, leading to sub-optimal architectural designs.
+  - Poor understanding and ineffective communication among team members.
+  - Spread of poor design practices, causing numerous bugs and making new code integration challenging.
 
 ## Repository Layout
 Each design pattern category has its own directory and each pattern inside has its own folder, its description and its source code.
+
+## Examples and Use Cases
+Each pattern comes with practical examples demonstrating its application in real-world scenarios. These examples help developers understand when and how to use each pattern to solve specific design problems effectively.
 
 ## How to Contribute
 Thank you for considering to help out with the source code!
