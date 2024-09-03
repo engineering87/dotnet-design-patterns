@@ -28,6 +28,8 @@ Design patterns are **standardized solutions** to common problems encountered in
 ## GoF Design Patterns
 The **GoF (Gang of Four)** design patterns refer to a collection of 23 design patterns that were introduced in the book **"Design Patterns: Elements of Reusable Object-Oriented Software"** published in 1994 by four authors: *Erich Gamma*, *Richard Helm*, *Ralph Johnson*, and *John Vlissides*. This book became a cornerstone in the field of software engineering and introduced the concept of design patterns as a systematic approach to solving common design problems.
 
+[Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
+
 ## Categories of Design Patterns
 Design patterns are typically categorized into three main types based on their role and purpose:
 
