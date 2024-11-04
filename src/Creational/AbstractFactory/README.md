@@ -1,7 +1,8 @@
 # Abstract Factory Design Pattern
 The Abstract Factory Design Pattern is a creational pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes. It allows a system to be independent of how its objects are created, composed, or represented.
 
-## Key Concepts of the Abstract Factory Pattern    1. Abstract Factory
+## Key Concepts of the Abstract Factory Pattern    
+1. Abstract Factory
 Definition: An interface or abstract class that declares the methods for creating abstract products. It defines a set of related products (or objects) that the factory can create.
 Role: The abstract factory is responsible for producing families of related objects (like creating a set of UI elements for a theme or specific components for an operating system) without specifying their concrete types.
 
@@ -50,3 +51,12 @@ class Program
     }
 }
 ```
+
+## Key Differences between Abstract Factory and Factory
+| Aspect | Abstract Factory Pattern | Factory Pattern |
+| --- | --- | --- |
+| Purpose | Creates individual objects based on input | Creates families of related objects |
+| Complexity | Simpler, lower level | 	More complex, higher level |
+| Use Cases | Single object creation with flexibility | Cross-platform or themed systems needing cohesive components |
+| Flexibility | Limited to single object creation | Scalable to families of objects |
+| Structure | Often uses a single factory class | Typically uses a factory interface with multiple implementations for families |
