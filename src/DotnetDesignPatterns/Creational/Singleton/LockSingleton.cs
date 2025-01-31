@@ -13,7 +13,6 @@ namespace DotnetDesignPatterns.Creational.Singleton
         private LockSingleton()
         {
             // Initialize the singleton instance
-            Console.WriteLine("Singleton instance created");
         }
 
         // Public static method to get the singleton instance
@@ -40,7 +39,7 @@ namespace DotnetDesignPatterns.Creational.Singleton
         // Example method
         public void DoSomething()
         {
-            Console.WriteLine("Singleton instance is working.");
+            // Do something
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿// (c) 2024 Francesco Del Re <francesco.delre.87@gmail.com>
 // This code is licensed under MIT license (see LICENSE.txt for details)
-namespace DotnetDesignPatterns.Creational.Singleton.Singleton
+namespace DotnetDesignPatterns.Creational.Singleton
 {
     public sealed class LazySingleton
     {
@@ -11,7 +11,6 @@ namespace DotnetDesignPatterns.Creational.Singleton.Singleton
         private LazySingleton()
         {
             // Initialize the singleton instance
-            Console.WriteLine("Singleton instance created");
         }
 
         // Public static method to get the singleton instance
@@ -26,7 +25,7 @@ namespace DotnetDesignPatterns.Creational.Singleton.Singleton
         // Example method
         public void DoSomething()
         {
-            Console.WriteLine("Singleton instance is working.");
+            // Do something
         }
     }
 }
