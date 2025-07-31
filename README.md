@@ -16,6 +16,7 @@ This repository showcases .NET C# Design Patterns. The patterns can be browsed b
 - [Importance of Design Patterns](#importance-of-design-patterns)
 - [Why Use Design Patterns?](#why-use-design-patterns)
 - [Patterns vs. Anti-patterns](#patterns-vs-anti-patterns)
+- [.NET and Design Patterns](#net-and-design-patterns)
 - [Repository Layout](#repository-layout)
 - [How to Contribute](#how-to-contribute)
 - [Examples and Use Cases](#examples-and-use-cases)
@@ -83,6 +84,10 @@ Design patterns and anti-patterns play crucial roles in software development, ea
   - Pressure to deliver quickly, leading to sub-optimal architectural designs.
   - Poor understanding and ineffective communication among team members.
   - Spread of poor design practices, causing numerous bugs and making new code integration challenging.
+
+## .NET and Design Patterns
+The .NET platform, especially with C#, offers rich language features (like delegates, LINQ, async/await, and dependency injection) that make many design patterns more expressive and efficient to implement. Patterns like Dependency Injection, Singleton, Factory, and Observer are commonly used in .NET-based enterprise solutions and are well-supported by frameworks like ASP.NET Core and libraries like `Microsoft.Extensions.*`
+In this repository, each pattern is demonstrated using idiomatic C# to reflect best practices in the .NET ecosystem.
 
 ## Repository Layout
 Each design pattern category has its own directory and each pattern inside has its own folder, its description and its source code.
