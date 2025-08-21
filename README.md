@@ -20,7 +20,7 @@ This repository showcases .NET C# Design Patterns. The patterns can be browsed b
 - [Repository Layout](#repository-layout)
 - [How to Contribute](#how-to-contribute)
 - [Examples and Use Cases](#examples-and-use-cases)
-- [Licensee](#licensee)
+- [License](#license)
 - [Contact](#contact)
 
 ## What Are Design Patterns?
@@ -29,7 +29,16 @@ Design patterns are **standardized solutions** to common problems encountered in
 ## GoF Design Patterns
 The **GoF (Gang of Four)** design patterns refer to a collection of 23 design patterns that were introduced in the book **"Design Patterns: Elements of Reusable Object-Oriented Software"** published in 1994 by four authors: *Erich Gamma*, *Richard Helm*, *Ralph Johnson*, and *John Vlissides*. This book became a cornerstone in the field of software engineering and introduced the concept of design patterns as a systematic approach to solving common design problems.
 
-[Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
+👉 [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
+
+## Quickstart
+Clone the repository and build the project:
+
+```bash
+git clone https://github.com/engineering87/dotnet-design-patterns.git
+cd dotnet-design-patterns
+dotnet build
+```
 
 ## Categories of Design Patterns
 Design patterns are typically categorized into three main types based on their role and purpose:
@@ -103,8 +112,13 @@ If you'd like to contribute, please fork, fix, commit and send a pull request fo
  * [Fork the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
  * [Open an issue](https://github.com/engineering87/dotnet-design-patterns/issues) if you encounter a bug or have a suggestion for improvements/features
 
-## Licensee
-Repository source code is available under MIT License, see license in the source.
+## Further Reading
+- [Common Design Patterns (.NET Design Guidelines)](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/common-design-patterns) – Official Microsoft guidance on commonly used design patterns in .NET.  
+- [Discovering the Design Patterns You're Already Using in .NET (MSDN Magazine)](https://learn.microsoft.com/en-us/archive/msdn-magazine/2005/july/discovering-the-design-patterns-you-re-already-using-in-net) – An article showing how many design patterns are already embedded in the .NET Framework and ASP.NET.  
+- [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns) – The original “Gang of Four” book that introduced the 23 classic design patterns.  
+
+## License
+Repository source code is available under MIT License, see [LICENSE](LICENSE) in the source.
 
 ## Contact
 Please contact at francesco.delre.87[at]gmail.com for any details.
