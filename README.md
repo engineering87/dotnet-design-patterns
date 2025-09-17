@@ -16,10 +16,11 @@ This repository showcases .NET C# Design Patterns. The patterns can be browsed b
 - [Importance of Design Patterns](#importance-of-design-patterns)
 - [Why Use Design Patterns?](#why-use-design-patterns)
 - [Patterns vs. Anti-patterns](#patterns-vs-anti-patterns)
+- [.NET and Design Patterns](#net-and-design-patterns)
 - [Repository Layout](#repository-layout)
 - [How to Contribute](#how-to-contribute)
 - [Examples and Use Cases](#examples-and-use-cases)
-- [Licensee](#licensee)
+- [License](#license)
 - [Contact](#contact)
 
 ## What Are Design Patterns?
@@ -28,7 +29,16 @@ Design patterns are **standardized solutions** to common problems encountered in
 ## GoF Design Patterns
 The **GoF (Gang of Four)** design patterns refer to a collection of 23 design patterns that were introduced in the book **"Design Patterns: Elements of Reusable Object-Oriented Software"** published in 1994 by four authors: *Erich Gamma*, *Richard Helm*, *Ralph Johnson*, and *John Vlissides*. This book became a cornerstone in the field of software engineering and introduced the concept of design patterns as a systematic approach to solving common design problems.
 
-[Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
+👉 [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
+
+## Quickstart
+Clone the repository and build the project:
+
+```bash
+git clone https://github.com/engineering87/dotnet-design-patterns.git
+cd dotnet-design-patterns
+dotnet build
+```
 
 ## Categories of Design Patterns
 Design patterns are typically categorized into three main types based on their role and purpose:
@@ -84,6 +94,10 @@ Design patterns and anti-patterns play crucial roles in software development, ea
   - Poor understanding and ineffective communication among team members.
   - Spread of poor design practices, causing numerous bugs and making new code integration challenging.
 
+## .NET and Design Patterns
+The .NET platform, especially with C#, offers rich language features (like delegates, LINQ, async/await, and dependency injection) that make many design patterns more expressive and efficient to implement. Patterns like Dependency Injection, Singleton, Factory, and Observer are commonly used in .NET-based enterprise solutions and are well-supported by frameworks like ASP.NET Core and libraries like `Microsoft.Extensions.*`
+In this repository, each pattern is demonstrated using idiomatic C# to reflect best practices in the .NET ecosystem.
+
 ## Repository Layout
 Each design pattern category has its own directory and each pattern inside has its own folder, its description and its source code.
 
@@ -98,8 +112,13 @@ If you'd like to contribute, please fork, fix, commit and send a pull request fo
  * [Fork the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo)
  * [Open an issue](https://github.com/engineering87/dotnet-design-patterns/issues) if you encounter a bug or have a suggestion for improvements/features
 
-## Licensee
-Repository source code is available under MIT License, see license in the source.
+## Further Reading
+- [Common Design Patterns (.NET Design Guidelines)](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/common-design-patterns) – Official Microsoft guidance on commonly used design patterns in .NET.  
+- [Discovering the Design Patterns You're Already Using in .NET (MSDN Magazine)](https://learn.microsoft.com/en-us/archive/msdn-magazine/2005/july/discovering-the-design-patterns-you-re-already-using-in-net) – An article showing how many design patterns are already embedded in the .NET Framework and ASP.NET.  
+- [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns) – The original “Gang of Four” book that introduced the 23 classic design patterns.  
+
+## License
+Repository source code is available under MIT License, see [LICENSE](LICENSE) in the source.
 
 ## Contact
 Please contact at francesco.delre.87[at]gmail.com for any details.
