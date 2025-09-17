@@ -9,17 +9,22 @@ This repository showcases .NET C# Design Patterns. The patterns can be browsed b
 ## Contents
 - [What Are Design Patterns?](#what-are-design-patterns)
 - [GoF Design Patterns](#gof-design-patterns)
+- [Quickstart](#quickstart)
 - [Categories of Design Patterns](#categories-of-design-patterns)
   - [Creational Patterns](#creational-patterns)
   - [Structural Patterns](#structural-patterns)
   - [Behavioral Patterns](#behavioral-patterns)
 - [Importance of Design Patterns](#importance-of-design-patterns)
 - [Why Use Design Patterns?](#why-use-design-patterns)
+- [Overview Table of GoF Patterns](#overview-table-of-gof-patterns)
 - [Patterns vs. Anti-patterns](#patterns-vs-anti-patterns)
+- [When to Use or Avoid Each Pattern](#when-to-use-or-avoid-each-pattern)
 - [.NET and Design Patterns](#net-and-design-patterns)
+- [.NET Mapping Cheatsheet](#net-mapping-cheatsheet)
 - [Repository Layout](#repository-layout)
-- [How to Contribute](#how-to-contribute)
 - [Examples and Use Cases](#examples-and-use-cases)
+- [How to Contribute](#how-to-contribute)
+- [Further Reading](#further-reading)
 - [License](#license)
 - [Contact](#contact)
 
@@ -77,6 +82,34 @@ Patterns offer ways to handle changing requirements and evolving designs by deco
 ## Why Use Design Patterns?
 Design patterns act as a toolbox of proven solutions, helping developers create better, more efficient, and maintainable software. They offer a structured approach to problem-solving, improve code readability, and facilitate collaboration among team members.
 
+## Overview Table of GoF Patterns
+
+| Pattern | Category | Description |
+|---------|----------|-------------|
+| **Abstract Factory**  | Creational  | Provide an interface for creating families of related or dependent objects without specifying their concrete classes. |
+| **Builder**           | Creational  | Separate the construction of a complex object from its representation so that the same process can create different representations. |
+| **Factory Method**    | Creational  | Define an interface for object creation, but let subclasses decide which class to instantiate. |
+| **Prototype**         | Creational  | Create new objects by copying an existing object (prototype) rather than creating from scratch. |
+| **Singleton**         | Creational  | Ensure a class has only one instance, and provide a global point of access to it. |
+| **Adapter**           | Structural  | Allow incompatible interfaces to work together by wrapping one with an adapter. |
+| **Bridge**            | Structural  | Decouple an abstraction from its implementation so the two can vary independently. |
+| **Composite**         | Structural  | Compose objects into tree structures to represent part-whole hierarchies; clients treat individual objects and compositions uniformly. |
+| **Decorator**         | Structural  | Attach additional responsibilities to objects dynamically. |
+| **Facade**            | Structural  | Provide a unified interface to a set of interfaces in a subsystem. |
+| **Flyweight**         | Structural  | Use sharing to support large numbers of fine-grained objects efficiently. |
+| **Proxy**             | Structural  | Provide a surrogate or placeholder for another object to control access or defer costly operations. |
+| **Chain of Responsibility** | Behavioral | Allow a request to be passed along a chain of handlers until one handles it. |
+| **Command**           | Behavioral | Encapsulate a request as an object, thereby letting you parameterize clients with queues, requests, and operations. |
+| **Interpreter**       | Behavioral | Define a representation for a grammar of a language, and an interpreter to deal with this grammar. |
+| **Iterator**          | Behavioral | Provide a way to access elements of an aggregate object sequentially without exposing its underlying representation. |
+| **Mediator**          | Behavioral | Define an object that encapsulates how a set of objects interact. |
+| **Memento**           | Behavioral | Capture and externalize an object’s internal state so that it can be restored later, without breaking encapsulation. |
+| **Observer**          | Behavioral | Define a one-to-many dependency so that when one object changes state, all its dependents are notified. |
+| **State**             | Behavioral | Allow an object to alter its behavior when its internal state changes; object appears to change class. |
+| **Strategy**          | Behavioral | Define a family of algorithms, encapsulate each one, and make them interchangeable. |
+| **Template Method**   | Behavioral | Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. |
+| **Visitor**           | Behavioral | Represent an operation to be performed on elements of an object structure without changing the classes of the elements. |
+
 ## Patterns vs. Anti-patterns
 Design patterns and anti-patterns play crucial roles in software development, each representing opposing approaches to solving programming challenges:
 - **Design Patterns**:
@@ -94,9 +127,48 @@ Design patterns and anti-patterns play crucial roles in software development, ea
   - Poor understanding and ineffective communication among team members.
   - Spread of poor design practices, causing numerous bugs and making new code integration challenging.
 
+## When to Use or Avoid Each Pattern
+| Pattern | When to Use | When to Avoid |
+|---------|-------------|---------------|
+| **Abstract Factory** | When you need to create families of related objects without depending on concrete classes. | If you only need a few objects and don’t need family consistency. |
+| **Builder** | When constructing a complex object step by step with different representations. | If the object is simple and doesn’t need stepwise construction. |
+| **Factory Method** | When subclasses should decide which concrete class to instantiate. | If you don’t need flexibility in instantiation. |
+| **Prototype** | When creating new objects by cloning existing ones is cheaper than creating from scratch. | If objects are simple or cloning is more expensive than direct creation. |
+| **Singleton** | When exactly one instance must exist and be globally accessible. | If global state leads to hidden dependencies or testing becomes hard. |
+| **Adapter** | When you need to make incompatible interfaces work together. | If you can refactor the code to use a common interface instead. |
+| **Bridge** | When you want to decouple abstraction from implementation so both can vary. | If the hierarchy is stable and won’t evolve separately. |
+| **Composite** | When working with tree structures (part-whole hierarchies) and want uniform access. | If the structure is flat and simple, no hierarchy needed. |
+| **Decorator** | When you want to add behavior dynamically without modifying classes. | If object composition makes debugging/maintenance too complex. |
+| **Facade** | When you want to simplify a complex subsystem with a unified interface. | If a simple wrapper hides too much functionality needed by clients. |
+| **Flyweight** | When you need to handle many similar objects efficiently by sharing state. | If objects are unique and sharing state gives no benefit. |
+| **Proxy** | When you want a placeholder to control access (e.g., lazy load, security). | If indirection adds unnecessary complexity or overhead. |
+| **Chain of Responsibility** | When multiple handlers can process a request without hardcoding sender–receiver. | If request flow must be predictable and explicit. |
+| **Command** | When you need to encapsulate requests, support undo/redo, or queue/log actions. | If direct method calls are simpler and sufficient. |
+| **Interpreter** | When you have a grammar to interpret and it’s relatively simple. | If grammar is complex — use a parser/DSL instead. |
+| **Iterator** | When you want sequential access to elements without exposing structure. | If simple loops over collections are enough. |
+| **Mediator** | When you want to centralize and simplify complex communications between objects. | If communication is simple and a mediator adds indirection. |
+| **Memento** | When you need to save and restore object state without exposing internals. | If state saving is too costly in memory or performance. |
+| **Observer** | When you want one-to-many notifications of state changes. | If frequent updates cause performance issues or cascading changes. |
+| **State** | When an object’s behavior should change based on internal state. | If state changes are rare or can be handled with conditionals. |
+| **Strategy** | When you need interchangeable algorithms encapsulated behind a common interface. | If only one algorithm exists and will not change. |
+| **Template Method** | When you want to define the skeleton of an algorithm but let subclasses fill steps. | If subclassing leads to rigid inheritance and reduced flexibility. |
+| **Visitor** | When you need to perform operations on object structures without modifying them. | If the object structure changes often — adding visitors becomes painful. |
+
 ## .NET and Design Patterns
 The .NET platform, especially with C#, offers rich language features (like delegates, LINQ, async/await, and dependency injection) that make many design patterns more expressive and efficient to implement. Patterns like Dependency Injection, Singleton, Factory, and Observer are commonly used in .NET-based enterprise solutions and are well-supported by frameworks like ASP.NET Core and libraries like `Microsoft.Extensions.*`
 In this repository, each pattern is demonstrated using idiomatic C# to reflect best practices in the .NET ecosystem.
+
+## .NET Mapping Cheatsheet
+- **Singleton** → `IServiceCollection.AddSingleton<T>()`, `Lazy<T>`
+- **Strategy** → Interfaces + DI, runtime selection via factory/Keyed services
+- **Observer** → `IObservable<T>/IObserver<T>`, C# events, `IChangeToken`
+- **Decorator** → Multiple registrations / `Scrutor` (service decoration)
+- **Adapter** → Wrapper for external SDKs (e.g., HTTP client), `HttpMessageHandler`
+- **Factory Method / Abstract Factory** → `IServiceProvider`, factory delegate `Func<T>`
+- **Command** → MediatR, `IRequestHandler<>`
+- **Iterator** → `IEnumerable<T>`, `yield return`
+- **Template Method** → Base classes + `virtual` methods
+- **Proxy** → `HttpClient` / generated clients, dynamic proxies (Castle, DispatchProxy)
 
 ## Repository Layout
 Each design pattern category has its own directory and each pattern inside has its own folder, its description and its source code.
