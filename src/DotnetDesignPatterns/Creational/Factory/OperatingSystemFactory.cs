@@ -7,11 +7,13 @@ namespace DotnetDesignPatterns.Creational.Factory
     {
         public static IOperatingSystem CreateOperatingSystem(string osType)
         {
+            ArgumentNullException.ThrowIfNull(osType);
+
             return osType.ToLower() switch
             {
                 "linux" => new LinuxOS(),
                 "windows" => new WindowsOS(),
-                _ => throw new ArgumentException("Invalid OS Type"),
+                _ => throw new ArgumentException("Invalid OS Type", nameof(osType)),
             };
         }
     }

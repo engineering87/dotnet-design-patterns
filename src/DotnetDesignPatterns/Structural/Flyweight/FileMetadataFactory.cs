@@ -5,23 +5,33 @@ namespace DotnetDesignPatterns.Structural.Flyweight
     // Flyweight Factory
     public class FileMetadataFactory
     {
-        private Dictionary<string, IFileMetadata> _metadataCache = new Dictionary<string, IFileMetadata>();
+        private readonly Dictionary<string, IFileMetadata> _metadataCache = new Dictionary<string, IFileMetadata>();
+        private readonly object _lock = new object();
 
         public IFileMetadata GetFileMetadata(string fileType, string owner)
         {
+            ArgumentException.ThrowIfNullOrWhiteSpace(fileType);
+            ArgumentException.ThrowIfNullOrWhiteSpace(owner);
+
             string key = $"{fileType}:{owner}";
 
-            if (!_metadataCache.ContainsKey(key))
+            lock (_lock)
             {
-                Console.WriteLine("Creating new file metadata.");
-                _metadataCache[key] = new FileMetadata(fileType, owner);
-            }
-            else
-            {
-                Console.WriteLine("Reusing existing file metadata.");
-            }
+                if (!_metadataCache.TryGetValue(key, out var metadata))
+                {
+                    Console.WriteLine("Creating new file metadata.");
+                    metadata = new FileMetadata(fileType, owner);
+                    _metadataCache[key] = metadata;
+                }
+                else
+                {
+                    Console.WriteLine("Reusing existing file metadata.");
+                }
 
-            return _metadataCache[key];
+                return metadata;
+            }
         }
+
+        public int CacheCount => _metadataCache.Count;
     }
 }

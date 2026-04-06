@@ -57,11 +57,19 @@ namespace DotnetDesignPatterns.Tests.Creational.Prototype
         // Helper method to capture console output
         private string CaptureConsoleOutput(Action action)
         {
-            using (var stringWriter = new StringWriter())
+            var originalOutput = Console.Out;
+            try
             {
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
+                using (var stringWriter = new StringWriter())
+                {
+                    Console.SetOut(stringWriter);
+                    action.Invoke();
+                    return stringWriter.ToString();
+                }
+            }
+            finally
+            {
+                Console.SetOut(originalOutput);
             }
         }
     }

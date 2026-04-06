@@ -9,6 +9,7 @@ namespace DotnetDesignPatterns.Behavioral.Command
 
         public FileInvoker(ICommand command)
         {
+            ArgumentNullException.ThrowIfNull(command);
             _command = command;
         }
 

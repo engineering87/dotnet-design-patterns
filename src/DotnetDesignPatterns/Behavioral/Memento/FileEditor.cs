@@ -5,11 +5,11 @@ namespace DotnetDesignPatterns.Behavioral.Memento
     // Originator: The File being edited
     public class FileEditor
     {
-        public string Content { get; private set; }
+        public string Content { get; private set; } = string.Empty;
 
         public void Write(string content)
         {
-            Content = content;
+            Content = content ?? string.Empty;
             Console.WriteLine($"File content updated to: {Content}");
         }
 
@@ -21,6 +21,7 @@ namespace DotnetDesignPatterns.Behavioral.Memento
 
         public void Restore(FileMemento memento)
         {
+            ArgumentNullException.ThrowIfNull(memento);
             Content = memento.Content;
             Console.WriteLine($"Restored file content to: {Content}");
         }
