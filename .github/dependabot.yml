@@ -1,3 +1,8 @@
+# Code scanning runs through GitHub's default setup, configured under
+# Settings, Code security. There is no CodeQL workflow in this repository:
+# a default setup and an advanced workflow cannot coexist, and the default
+# one needs no maintenance.
+
 version: 2
 
 updates:
