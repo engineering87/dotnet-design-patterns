@@ -33,36 +33,15 @@ jobs:
       - name: Build
         run: dotnet build src/DotnetDesignPatterns.sln --configuration Release --no-restore
 
+      # global.json selects the Microsoft.Testing.Platform runner. The VSTest
+      # options that used to be here, --logger and --collect, belong to the old
+      # runner and are rejected by this one. Reporting and coverage are available
+      # as platform extensions and can come back once the packages are pinned.
       - name: Test
         run: >
           dotnet test src/DotnetDesignPatterns.sln
           --configuration Release
           --no-build
-          --logger "trx;LogFileName=test-results.trx"
-          --collect:"XPlat Code Coverage"
-          --results-directory ${{ github.workspace }}/artifacts/test-results
-
-      - name: Report line coverage
-        if: always()
-        run: |
-          python3 - <<'PY'
-          import glob, xml.etree.ElementTree as ET
-          reports = glob.glob('artifacts/test-results/**/coverage.cobertura.xml', recursive=True)
-          if not reports:
-              print('no coverage report was produced')
-          for path in reports:
-              root = ET.parse(path).getroot()
-              print(f"line coverage {float(root.get('line-rate', 0)) * 100:.1f}%")
-              print(f"branch coverage {float(root.get('branch-rate', 0)) * 100:.1f}%")
-          PY
-
-      - name: Upload test results
-        if: always()
-        uses: actions/upload-artifact@v6
-        with:
-          name: test-results
-          path: artifacts/test-results
-          if-no-files-found: ignore
 
   format:
     name: Formatting

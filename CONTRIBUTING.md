@@ -20,6 +20,8 @@ dotnet build src/DotnetDesignPatterns.sln
 dotnet test src/DotnetDesignPatterns.sln
 ```
 
+`global.json` selects the Microsoft.Testing.Platform runner, which xUnit v3 uses natively. The VSTest options of `dotnet test`, `--logger` and `--collect` among them, do not apply. The platform has its own equivalents, documented under Microsoft.Testing.Platform extensions.
+
 The solution targets .NET 10, the current long term support release. Install the .NET 10 SDK before building.
 
 ## Repository conventions

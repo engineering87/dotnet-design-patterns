@@ -239,7 +239,9 @@ All twenty-three patterns are covered by tests, written with xUnit v3 and run on
 dotnet test src/DotnetDesignPatterns.sln
 ```
 
-Coverage is collected through coverlet. The tests run in parallel, because none of them touches process wide state: every class that narrates what it is doing writes to a `TextWriter` that defaults to `Console.Out`, and a test hands it a `StringWriter` of its own.
+The suite runs on Microsoft.Testing.Platform, which xUnit v3 uses natively and which the .NET 10 SDK selects through the `test` section of `global.json`. Coverage is not collected at the moment: the collector this repository used belongs to the older VSTest runner.
+
+The tests run in parallel, because none of them touches process wide state: every class that narrates what it is doing writes to a `TextWriter` that defaults to `Console.Out`, and a test hands it a `StringWriter` of its own.
 
 ```csharp
 var output = new StringWriter();
