@@ -1,4 +1,9 @@
-﻿# Interpreter Design Pattern
+# Interpreter Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/interpreter.svg" alt="UML diagram of the Interpreter pattern">
+</p>
+
 The Interpreter design pattern is a behavioral pattern that provides a way to evaluate sentences in a language. It is often used to interpret expressions or commands, where you define a grammar and create an interpreter that can parse and execute these expressions.
 
 ## Key Concepts of the Interpreter Pattern
@@ -44,7 +49,7 @@ Provides a common interface for all concrete expressions.
     - Constructor: Takes the filename substring to search for.
     - Interpret Method: Checks if the file name contains the substring.
 
-* **ExtensionFilter**: 
+* **ExtensionFilter**:
 `ExtensionFilter`: A terminal expression that checks if a file has a specific extension.
     - Constructor: Takes the file extension to search for.
     - Interpret Method: Checks if the file extension matches the given extension.

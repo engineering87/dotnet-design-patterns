@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 538 421" width="538" height="421" role="img" aria-label="Singleton">
+  <rect x="0.5" y="0.5" width="537" height="420" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#3fb950"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Singleton</text>
+  <path d="M202.0 91.5 L253.3 114.3" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <polygon points="261.5,118.0 251.6,118.1 255.0,110.5" fill="#6e7681"/>
+  <rect x="197.8" y="94.9" width="59.6" height="16" rx="4" fill="#0d1117"/>
+  <text x="227.7" y="106.9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6e7681" text-anchor="middle">Instance</text>
+  <path d="M113.0 125.0 L113.0 178.5 L381.0 178.5 L381.0 223.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <polygon points="381.0,232.0 376.8,223.0 385.2,223.0" fill="#6e7681"/>
+  <rect x="24.0" y="58.0" width="178" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h164 a7 7 0 0 1 7 7 v23 h-178 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="202.0" y2="88.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="113.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">Client</text>
+  <text x="38.0" y="109.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">LazySingleton.Instance</text>
+  <rect x="261.5" y="58.0" width="239" height="120" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M261.5 65.0 a7 7 0 0 1 7 -7 h225 a7 7 0 0 1 7 7 v23 h-239 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="261.5" y1="88.0" x2="500.5" y2="88.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="381.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">LazySingleton</text>
+  <text x="381.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#3fb950" text-anchor="middle" letter-spacing="0.4">sealed</text>
+  <text x="275.5" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- Lazy&lt;LazySingleton&gt; _instance</text>
+  <text x="275.5" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Instance : LazySingleton</text>
+  <text x="275.5" y="162.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ DoSomething() : void</text>
+  <rect x="248.0" y="232.0" width="266" height="139" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M248.0 239.0 a7 7 0 0 1 7 -7 h252 a7 7 0 0 1 7 7 v23 h-266 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="248.0" y1="262.0" x2="514.0" y2="262.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="381.0" y="252.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">LockSingleton</text>
+  <text x="381.0" y="280.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#3fb950" text-anchor="middle" letter-spacing="0.4">sealed</text>
+  <text x="262.0" y="298.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- volatile LockSingleton? _instance</text>
+  <text x="262.0" y="317.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- object _lock</text>
+  <text x="262.0" y="336.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Instance : LockSingleton</text>
+  <text x="262.0" y="355.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ DoSomething() : void</text>
+  <text x="24" y="401" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">One instance, created on first access, shared by every caller.</text>
+</svg>

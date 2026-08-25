@@ -108,14 +108,15 @@ namespace DotnetDesignPatterns.Tests.Behavioral.Memento
         public void FileHistory_Undo_WhenNoStates_ShouldIndicateNoStatesToUndo()
         {
             // Arrange
-            var editor = new FileEditor();
-            var history = new FileHistory(editor);
+            var output = new StringWriter();
+            var editor = new FileEditor { Output = output };
+            var history = new FileHistory(editor) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => history.Undo());
+            history.Undo();
 
             // Assert
-            Assert.Contains("No states to undo", output);
+            Assert.Contains("No states to undo", output.ToString());
         }
 
         [Fact]
@@ -141,22 +142,24 @@ namespace DotnetDesignPatterns.Tests.Behavioral.Memento
         public void FileHistory_Redo_WhenNoStates_ShouldIndicateNoStatesToRedo()
         {
             // Arrange
-            var editor = new FileEditor();
-            var history = new FileHistory(editor);
+            var output = new StringWriter();
+            var editor = new FileEditor { Output = output };
+            var history = new FileHistory(editor) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => history.Redo());
+            history.Redo();
 
             // Assert
-            Assert.Contains("No states to redo", output);
+            Assert.Contains("No states to redo", output.ToString());
         }
 
         [Fact]
         public void FileHistory_Save_ShouldClearRedoStack()
         {
             // Arrange
-            var editor = new FileEditor();
-            var history = new FileHistory(editor);
+            var output = new StringWriter();
+            var editor = new FileEditor { Output = output };
+            var history = new FileHistory(editor) { Output = output };
             editor.Write("Version 1");
             history.Save();
             editor.Write("Version 2");
@@ -166,26 +169,11 @@ namespace DotnetDesignPatterns.Tests.Behavioral.Memento
             history.Save();
 
             // Act
-            var output = CaptureConsoleOutput(() => history.Redo());
+            history.Redo();
 
             // Assert
-            Assert.Contains("No states to redo", output);
+            Assert.Contains("No states to redo", output.ToString());
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

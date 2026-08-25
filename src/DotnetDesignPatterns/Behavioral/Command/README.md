@@ -1,4 +1,9 @@
-﻿# Command Design Pattern
+# Command Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/command.svg" alt="UML diagram of the Command pattern">
+</p>
+
 The Command design pattern is a behavioral design pattern in which an object is used to encapsulate all the information needed to perform an action or trigger an event at a later time. This pattern allows for the separation of concerns, making it easier to handle, queue, and log operations.
 
 ## Key Concepts of the Command Pattern
@@ -59,7 +64,7 @@ This allows grouping multiple operations into a single command, which can then b
 Each of these classes contains a reference to the `FileSystemReceiver` and uses it to perform the specific operation when Execute is called. They also implement Undo to reverse the operation.
 
 * **Invoker**:
-`FileInvoker` class is responsible for executing the command. It holds a reference to a `ICommand` object and calls its Execute and Undo methods.
+`FileInvoker` runs commands and keeps a history of the ones it has run. It never learns what a command does or which receiver carries it out, which is what lets it queue requests, undo the last one, or roll back everything.
 
 ## Usage
 ```csharp
@@ -75,19 +80,18 @@ class Program
             var writeCommand = new WriteFileCommand(fileSystem, "example.txt", "Hello, World!");
             var deleteCommand = new DeleteFileCommand(fileSystem, "example.txt");
 
-            // Invoker
-            var fileInvoker = new FileInvoker(createCommand);
-            fileInvoker.Execute();  // Output: Creating file: example.txt
-            fileInvoker.Undo();     // Output: Deleting file: example.txt
+            // Invoker: it records what it runs, so it can take the calls back
+            var fileInvoker = new FileInvoker();
 
-            fileInvoker = new FileInvoker(writeCommand);
-            fileInvoker.Execute();  // Output: Writing to file: example.txt
-                                    // Content: Hello, World!
-            fileInvoker.Undo();     // Output: Undoing write to file: example.txt
+            fileInvoker.Execute(createCommand);  // Creating file: example.txt
+            fileInvoker.Execute(writeCommand);   // Writing to file: example.txt
+            fileInvoker.Execute(deleteCommand);  // Deleting file: example.txt
 
-            fileInvoker = new FileInvoker(deleteCommand);
-            fileInvoker.Execute();  // Output: Deleting file: example.txt
-            fileInvoker.Undo();     // Output: Undoing delete: Recreating file example.txt
+            // Three commands are on the history, most recent last
+            Console.WriteLine(fileInvoker.History.Count);  // 3
+
+            fileInvoker.Undo();     // Undoing delete: Recreating file example.txt
+            fileInvoker.UndoAll();  // Undoes the write, then the create
         }
     }
 ```

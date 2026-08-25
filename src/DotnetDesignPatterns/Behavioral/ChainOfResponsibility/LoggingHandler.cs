@@ -3,11 +3,22 @@
 namespace DotnetDesignPatterns.Behavioral.ChainOfResponsibility
 {
     // Concrete Handler: Logging
+    /// <summary>
+    /// Records the request at the end of the chain.
+    /// </summary>
     public class LoggingHandler : FileOperationHandler
     {
+        /// <summary>
+        /// Logs the request, then passes it on.
+        /// </summary>
+        /// <param name="operationType">The operation being requested, for example read or write.</param>
+        /// <param name="fileName">The name of the file.</param>
         public override void HandleRequest(string operationType, string fileName)
         {
-            Console.WriteLine($"[LOG] Operation '{operationType}' on file '{fileName}'");
+            ArgumentException.ThrowIfNullOrWhiteSpace(operationType);
+            ArgumentException.ThrowIfNullOrWhiteSpace(fileName);
+
+            Output.WriteLine($"[LOG] Operation '{operationType}' on file '{fileName}'");
 
             if (_nextHandler != null)
             {

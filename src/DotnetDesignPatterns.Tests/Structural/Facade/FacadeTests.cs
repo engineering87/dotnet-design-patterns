@@ -24,28 +24,30 @@ namespace DotnetDesignPatterns.Tests.Structural.Facade
         public void FileReader_ReadFile_ShouldOutputReadingMessage()
         {
             // Arrange
-            var reader = new FileReader();
+            var output = new StringWriter();
+            var reader = new FileReader { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => reader.ReadFile("document.pdf"));
+            reader.ReadFile("document.pdf");
 
             // Assert
-            Assert.Contains("Reading file from", output);
-            Assert.Contains("document.pdf", output);
+            Assert.Contains("Reading file from", output.ToString());
+            Assert.Contains("document.pdf", output.ToString());
         }
 
         [Fact]
         public void FileWriter_WriteFile_ShouldOutputWritingMessage()
         {
             // Arrange
-            var writer = new FileWriter();
+            var output = new StringWriter();
+            var writer = new FileWriter { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => writer.WriteFile("output.txt", "content"));
+            writer.WriteFile("output.txt", "content");
 
             // Assert
-            Assert.Contains("Writing to file at", output);
-            Assert.Contains("output.txt", output);
+            Assert.Contains("Writing to file at", output.ToString());
+            Assert.Contains("output.txt", output.ToString());
         }
 
         [Fact]
@@ -65,45 +67,49 @@ namespace DotnetDesignPatterns.Tests.Structural.Facade
         public void FileValidator_Validate_ShouldOutputValidationMessage()
         {
             // Arrange
-            var validator = new FileValidator();
+            var output = new StringWriter();
+            var validator = new FileValidator { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => validator.Validate("config.xml"));
+            validator.Validate("config.xml");
 
             // Assert
-            Assert.Contains("Validating file at", output);
-            Assert.Contains("config.xml", output);
+            Assert.Contains("Validating file at", output.ToString());
+            Assert.Contains("config.xml", output.ToString());
         }
 
         [Fact]
         public void FileManagerFacade_ProcessFile_ShouldCoordinateSubsystems()
         {
             // Arrange
-            var facade = new FileManagerFacade();
+            var output = new StringWriter();
+            var facade = new FileManagerFacade { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => facade.ProcessFile("input.txt", "new content"));
+            facade.ProcessFile("input.txt", "new content");
 
             // Assert
-            Assert.Contains("Validating", output);
-            Assert.Contains("Reading", output);
-            Assert.Contains("Writing", output);
-            Assert.Contains("processed successfully", output);
+            Assert.Contains("Validating", output.ToString());
+            Assert.Contains("Reading", output.ToString());
+            Assert.Contains("Writing", output.ToString());
+            Assert.Contains("processed successfully", output.ToString());
         }
 
         [Fact]
         public void FileManagerFacade_ProcessFile_ShouldValidateFirst()
         {
             // Arrange
-            var facade = new FileManagerFacade();
+            var output = new StringWriter();
+            var facade = new FileManagerFacade { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => facade.ProcessFile("test.txt", "content"));
+            facade.ProcessFile("test.txt", "content");
 
             // Assert
-            var validateIndex = output.IndexOf("Validating");
-            var readIndex = output.IndexOf("Reading");
-            var writeIndex = output.IndexOf("Writing");
+            var text = output.ToString();
+            var validateIndex = text.IndexOf("Validating", StringComparison.Ordinal);
+            var readIndex = text.IndexOf("Reading", StringComparison.Ordinal);
+            var writeIndex = text.IndexOf("Writing", StringComparison.Ordinal);
 
             Assert.True(validateIndex < readIndex, "Validation should happen before reading");
             Assert.True(readIndex < writeIndex, "Reading should happen before writing");
@@ -124,29 +130,15 @@ namespace DotnetDesignPatterns.Tests.Structural.Facade
         public void FileManagerFacade_OutputsCurrentContent()
         {
             // Arrange
-            var facade = new FileManagerFacade();
+            var output = new StringWriter();
+            var facade = new FileManagerFacade { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => facade.ProcessFile("test.txt", "new"));
+            facade.ProcessFile("test.txt", "new");
 
             // Assert
-            Assert.Contains("Current content", output);
+            Assert.Contains("Current content", output.ToString());
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

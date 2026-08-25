@@ -10,7 +10,8 @@ namespace DotnetDesignPatterns.Tests.Behavioral.State
         public void FileContext_InitialState_ShouldBeCreatedState()
         {
             // Arrange & Act
-            var context = new FileContext();
+            var output = new StringWriter();
+            var context = new FileContext { Output = output };
 
             // Assert
             Assert.IsType<CreatedState>(context.State);
@@ -20,7 +21,8 @@ namespace DotnetDesignPatterns.Tests.Behavioral.State
         public void FileContext_Open_FromCreatedState_ShouldTransitionToOpenedState()
         {
             // Arrange
-            var context = new FileContext();
+            var output = new StringWriter();
+            var context = new FileContext { Output = output };
 
             // Act
             context.Open();
@@ -33,7 +35,8 @@ namespace DotnetDesignPatterns.Tests.Behavioral.State
         public void FileContext_Close_FromOpenedState_ShouldTransitionToClosedState()
         {
             // Arrange
-            var context = new FileContext();
+            var output = new StringWriter();
+            var context = new FileContext { Output = output };
             context.Open();
 
             // Act
@@ -47,7 +50,8 @@ namespace DotnetDesignPatterns.Tests.Behavioral.State
         public void FileContext_Open_FromClosedState_ShouldTransitionToOpenedState()
         {
             // Arrange
-            var context = new FileContext();
+            var output = new StringWriter();
+            var context = new FileContext { Output = output };
             context.Open();
             context.Close();
 
@@ -62,88 +66,78 @@ namespace DotnetDesignPatterns.Tests.Behavioral.State
         public void FileContext_Edit_FromOpenedState_ShouldNotChangeState()
         {
             // Arrange
-            var context = new FileContext();
+            var output = new StringWriter();
+            var context = new FileContext { Output = output };
             context.Open();
 
             // Act
-            var output = CaptureConsoleOutput(() => context.Edit());
+            context.Edit();
 
             // Assert
             Assert.IsType<OpenedState>(context.State);
-            Assert.Contains("File is being edited", output);
+            Assert.Contains("File is being edited", output.ToString());
         }
 
         [Fact]
         public void FileContext_Edit_FromClosedState_ShouldNotAllowEdit()
         {
             // Arrange
-            var context = new FileContext();
+            var output = new StringWriter();
+            var context = new FileContext { Output = output };
             context.Open();
             context.Close();
 
             // Act
-            var output = CaptureConsoleOutput(() => context.Edit());
+            context.Edit();
 
             // Assert
-            Assert.Contains("Cannot edit the file. It is closed", output);
+            Assert.Contains("Cannot edit the file. It is closed", output.ToString());
         }
 
         [Fact]
         public void FileContext_Edit_FromCreatedState_ShouldNotAllowEdit()
         {
             // Arrange
-            var context = new FileContext();
+            var output = new StringWriter();
+            var context = new FileContext { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => context.Edit());
+            context.Edit();
 
             // Assert
-            Assert.Contains("Cannot edit the file. It is not opened", output);
+            Assert.Contains("Cannot edit the file. It is not opened", output.ToString());
         }
 
         [Fact]
         public void FileContext_Open_WhenAlreadyOpened_ShouldIndicateAlreadyOpen()
         {
             // Arrange
-            var context = new FileContext();
+            var output = new StringWriter();
+            var context = new FileContext { Output = output };
             context.Open();
 
             // Act
-            var output = CaptureConsoleOutput(() => context.Open());
+            context.Open();
 
             // Assert
-            Assert.Contains("File is already opened", output);
+            Assert.Contains("File is already opened", output.ToString());
         }
 
         [Fact]
         public void FileContext_Close_WhenAlreadyClosed_ShouldIndicateAlreadyClosed()
         {
             // Arrange
-            var context = new FileContext();
+            var output = new StringWriter();
+            var context = new FileContext { Output = output };
             context.Open();
             context.Close();
 
             // Act
-            var output = CaptureConsoleOutput(() => context.Close());
+            context.Close();
 
             // Assert
-            Assert.Contains("File is already closed", output);
+            Assert.Contains("File is already closed", output.ToString());
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

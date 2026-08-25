@@ -1,4 +1,9 @@
-﻿# Visitor Design Pattern
+# Visitor Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/visitor.svg" alt="UML diagram of the Visitor pattern">
+</p>
+
 The Visitor design pattern is a behavioral pattern that allows you to add further operations to objects without modifying their classes. It separates the algorithm from the object structure it operates on, making it easy to add new operations without altering the object structures.
 
 ## Key Concepts of the Visitor Pattern

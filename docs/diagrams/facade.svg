@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 919 474" width="919" height="474" role="img" aria-label="Facade">
+  <rect x="0.5" y="0.5" width="918" height="473" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#58a6ff"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Facade</text>
+  <path d="M209.0 91.5 L247.3 115.3" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <polygon points="254.9,120.1 245.1,118.9 249.5,111.7" fill="#6e7681"/>
+  <path d="M569.0 120.0 L649.0 91.5" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="569.0,120.0 576.2,122.2 580.3,116.0 573.1,113.7" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <path d="M412.0 182.0 L412.0 209.0 L755.0 209.0 L755.0 236.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="412.0,182.0 407.5,188.0 412.0,194.0 416.5,188.0" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <path d="M412.0 182.0 L412.0 269.5 L755.0 269.5 L755.0 357.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="412.0,182.0 407.5,188.0 412.0,194.0 416.5,188.0" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <rect x="24.0" y="58.0" width="185" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h171 a7 7 0 0 1 7 7 v23 h-185 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="209.0" y2="88.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="116.5" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">Client</text>
+  <text x="38.0" y="109.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">facade.ProcessFile(...)</text>
+  <rect x="255.0" y="58.0" width="314" height="124" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M255.0 65.0 a7 7 0 0 1 7 -7 h300 a7 7 0 0 1 7 7 v23 h-314 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="255.0" y1="88.0" x2="569.0" y2="88.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="412.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileManagerFacade</text>
+  <text x="269.0" y="109.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- FileReader _fileReader</text>
+  <text x="269.0" y="128.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- FileWriter _fileWriter</text>
+  <text x="269.0" y="147.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- FileValidator _fileValidator</text>
+  <text x="269.0" y="166.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ ProcessFile(filePath, newContent) : void</text>
+  <rect x="649.0" y="58.0" width="212" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M649.0 65.0 a7 7 0 0 1 7 -7 h198 a7 7 0 0 1 7 7 v23 h-212 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="649.0" y1="88.0" x2="861.0" y2="88.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="755.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileValidator</text>
+  <text x="663.0" y="109.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Validate(filePath) : bool</text>
+  <rect x="642.0" y="236.0" width="226" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M642.0 243.0 a7 7 0 0 1 7 -7 h212 a7 7 0 0 1 7 7 v23 h-226 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="642.0" y1="266.0" x2="868.0" y2="266.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="755.0" y="256.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileReader</text>
+  <text x="656.0" y="287.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ ReadFile(filePath) : string</text>
+  <rect x="615.0" y="357.0" width="280" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M615.0 364.0 a7 7 0 0 1 7 -7 h266 a7 7 0 0 1 7 7 v23 h-280 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="615.0" y1="387.0" x2="895.0" y2="387.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="755.0" y="377.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileWriter</text>
+  <text x="629.0" y="408.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ WriteFile(filePath, content) : void</text>
+  <text x="24" y="454" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">One entry point in front of three collaborating classes.</text>
+</svg>

@@ -1,4 +1,9 @@
-﻿# Iterator Design Pattern
+# Iterator Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/iterator.svg" alt="UML diagram of the Iterator pattern">
+</p>
+
 The Iterator design pattern is a behavioral pattern that provides a way to access the elements of a collection sequentially without exposing the underlying representation of the collection. It allows for traversal of complex data structures, like lists or trees, in a uniform way.
 
 ## Key Concepts of the Iterator Pattern

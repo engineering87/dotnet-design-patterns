@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 730 421" width="730" height="421" role="img" aria-label="Memento">
+  <rect x="0.5" y="0.5" width="729" height="420" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#bc8cff"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Memento</text>
+  <path d="M123.5 197.0 L123.5 243.0 L345.0 243.0 L345.0 280.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <polygon points="345.0,289.0 340.8,280.0 349.2,280.0" fill="#6e7681"/>
+  <rect x="318.3" y="235.0" width="53.4" height="16" rx="4" fill="#0d1117"/>
+  <text x="345.0" y="247.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6e7681" text-anchor="middle">creates</text>
+  <path d="M586.5 235.0 L586.5 262.0 L345.0 262.0 L345.0 289.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="586.5,235.0 582.0,241.0 586.5,247.0 591.0,241.0" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <path d="M467.0 146.5 L223.0 127.5" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="467.0,146.5 461.4,141.5 455.0,145.6 460.7,150.5" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <rect x="24.0" y="58.0" width="199" height="139" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h185 a7 7 0 0 1 7 7 v23 h-199 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="223.0" y2="88.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="123.5" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileEditor</text>
+  <text x="123.5" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff" text-anchor="middle" letter-spacing="0.4">originator</text>
+  <text x="38.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Content : string</text>
+  <text x="38.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Write(content) : void</text>
+  <text x="38.0" y="162.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Save() : FileMemento</text>
+  <text x="38.0" y="181.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Restore(memento) : void</text>
+  <rect x="467.0" y="58.0" width="239" height="177" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M467.0 65.0 a7 7 0 0 1 7 -7 h225 a7 7 0 0 1 7 7 v23 h-239 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="467.0" y1="88.0" x2="706.0" y2="88.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="586.5" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileHistory</text>
+  <text x="586.5" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff" text-anchor="middle" letter-spacing="0.4">caretaker</text>
+  <text x="481.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- Stack&lt;FileMemento&gt; _undoStack</text>
+  <text x="481.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- Stack&lt;FileMemento&gt; _redoStack</text>
+  <text x="481.0" y="162.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- FileEditor _fileEditor</text>
+  <text x="481.0" y="181.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Save()</text>
+  <text x="481.0" y="200.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Undo()</text>
+  <text x="481.0" y="219.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Redo()</text>
+  <rect x="269.0" y="289.0" width="152" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M269.0 296.0 a7 7 0 0 1 7 -7 h138 a7 7 0 0 1 7 7 v23 h-152 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="269.0" y1="319.0" x2="421.0" y2="319.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="345.0" y="309.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileMemento</text>
+  <text x="345.0" y="337.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff" text-anchor="middle" letter-spacing="0.4">memento</text>
+  <text x="283.0" y="355.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Content : string</text>
+  <text x="24" y="401" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">The caretaker keeps snapshots it cannot read into, one stack per direction.</text>
+</svg>

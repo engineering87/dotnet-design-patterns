@@ -1,21 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <PackageProjectUrl>https://github.com/engineering87/dotnet-design-patterns</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/engineering87/dotnet-design-patterns</RepositoryUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Description>GoF Design Patterns implemented in .NET C#</Description>
+    <RootNamespace>DotnetDesignPatterns</RootNamespace>
+    <!-- This project is a reference implementation meant to be read and run from the
+         repository, not a library distributed on NuGet. Set IsPackable back to true and
+         add a PackageId if that ever changes. -->
+    <IsPackable>false</IsPackable>
     <Authors>Francesco Del Re</Authors>
+    <Description>GoF Design Patterns implemented in .NET C#</Description>
+    <RepositoryUrl>https://github.com/engineering87/dotnet-design-patterns</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/engineering87/dotnet-design-patterns</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 
 </Project>

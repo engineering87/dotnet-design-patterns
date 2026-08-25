@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 845 508" width="845" height="508" role="img" aria-label="Iterator">
+  <rect x="0.5" y="0.5" width="844" height="507" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#bc8cff"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Iterator</text>
+  <path d="M208.0 213.0 L208.0 151.0" fill="none" stroke="#bc8cff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="208.0,140.0 214.0,151.0 202.0,151.0" fill="#0d1117" stroke="#bc8cff" stroke-width="1.4"/>
+  <path d="M392.0 99.0 L429.2 106.7" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <polygon points="438.0,108.5 428.3,110.8 430.1,102.6" fill="#6e7681"/>
+  <rect x="383.9" y="94.8" width="53.4" height="16" rx="4" fill="#0d1117"/>
+  <text x="410.6" y="106.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6e7681" text-anchor="middle">creates</text>
+  <path d="M514.0 159.0 L514.0 186.0 L728.5 186.0 L728.5 204.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <polygon points="728.5,213.0 724.3,204.0 732.7,204.0" fill="#6e7681"/>
+  <rect x="704.9" y="178.0" width="47.2" height="16" rx="4" fill="#0d1117"/>
+  <text x="728.5" y="190.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6e7681" text-anchor="middle">yields</text>
+  <path d="M728.5 372.0 L728.5 325.0" fill="none" stroke="#bc8cff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="728.5,314.0 734.5,325.0 722.5,325.0" fill="#0d1117" stroke="#bc8cff" stroke-width="1.4"/>
+  <rect x="24.0" y="58.0" width="368" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h354 a7 7 0 0 1 7 7 v23 h-368 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="392.0" y2="88.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="208.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IFileSystemCollection</text>
+  <text x="208.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="38.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ CreateIterator() : IIterator&lt;IFileSystemElement&gt;</text>
+  <rect x="438.0" y="58.0" width="152" height="101" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M438.0 65.0 a7 7 0 0 1 7 -7 h138 a7 7 0 0 1 7 7 v23 h-152 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="438.0" y1="88.0" x2="590.0" y2="88.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="514.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IIterator&lt;T&gt;</text>
+  <text x="514.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="452.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ HasNext() : bool</text>
+  <text x="452.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Next() : T</text>
+  <rect x="24.0" y="213.0" width="368" height="105" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 220.0 a7 7 0 0 1 7 -7 h354 a7 7 0 0 1 7 7 v23 h-368 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="243.0" x2="392.0" y2="243.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="208.0" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">Directory</text>
+  <text x="38.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- List&lt;IFileSystemElement&gt; _elements</text>
+  <text x="38.0" y="283.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ AddElement(element) : void</text>
+  <text x="38.0" y="302.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ CreateIterator() : IIterator&lt;IFileSystemElement&gt;</text>
+  <rect x="636.0" y="213.0" width="185" height="101" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M636.0 220.0 a7 7 0 0 1 7 -7 h171 a7 7 0 0 1 7 7 v23 h-185 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="636.0" y1="243.0" x2="821.0" y2="243.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="728.5" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IFileSystemElement</text>
+  <text x="728.5" y="261.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="650.0" y="279.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Name : string</text>
+  <text x="650.0" y="298.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ PrintDetails() : void</text>
+  <rect x="636.0" y="372.0" width="185" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M636.0 379.0 a7 7 0 0 1 7 -7 h171 a7 7 0 0 1 7 7 v23 h-185 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="636.0" y1="402.0" x2="821.0" y2="402.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="728.5" y="392.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">File</text>
+  <text x="650.0" y="423.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Name : string</text>
+  <text x="650.0" y="442.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ PrintDetails() : void</text>
+  <text x="24" y="488" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">Traversal is separated from the structure being traversed.</text>
+</svg>

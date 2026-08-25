@@ -1,5 +1,9 @@
 # Builder Design Pattern
 
+<p align="center">
+  <img src="../../../../docs/diagrams/builder.svg" alt="UML diagram of the Builder pattern">
+</p>
+
 The Builder Design Pattern is a creational design pattern that provides a flexible solution to constructing complex objects. It allows an object to be constructed step-by-step, separating the construction process from the representation. This pattern is particularly useful when an object can be created in multiple ways or when the creation process involves many optional parameters or complex configurations.
 
 ## Key Concepts of the Builder Pattern

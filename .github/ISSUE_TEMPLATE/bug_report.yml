@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a defect in a pattern implementation or its documentation
+labels: [bug]
+body:
+  - type: input
+    id: pattern
+    attributes:
+      label: Pattern
+      description: Which pattern is affected, and in which category
+      placeholder: Structural / Flyweight
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: sdk
+    attributes:
+      label: .NET SDK version
+      placeholder: Output of dotnet --version
+    validations:
+      required: false

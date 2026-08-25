@@ -3,11 +3,22 @@
 namespace DotnetDesignPatterns.Behavioral.ChainOfResponsibility
 {
     // Concrete Handler: Authorization
+    /// <summary>
+    /// Checks that the operation is allowed before anything else runs.
+    /// </summary>
     public class AuthorizationHandler : FileOperationHandler
     {
+        /// <summary>
+        /// Rejects a forbidden operation, otherwise passes the request on.
+        /// </summary>
+        /// <param name="operationType">The operation being requested, for example read or write.</param>
+        /// <param name="fileName">The name of the file.</param>
         public override void HandleRequest(string operationType, string fileName)
         {
-            Console.WriteLine($"[AUTHORIZATION] Checking permissions for '{operationType}' on file '{fileName}'");
+            ArgumentException.ThrowIfNullOrWhiteSpace(operationType);
+            ArgumentException.ThrowIfNullOrWhiteSpace(fileName);
+
+            Output.WriteLine($"[AUTHORIZATION] Checking permissions for '{operationType}' on file '{fileName}'");
 
             if (operationType != "delete") // Simulate authorization check
             {
@@ -18,7 +29,7 @@ namespace DotnetDesignPatterns.Behavioral.ChainOfResponsibility
             }
             else
             {
-                Console.WriteLine($"[AUTHORIZATION] Permission denied for '{operationType}' operation on file '{fileName}'");
+                Output.WriteLine($"[AUTHORIZATION] Permission denied for '{operationType}' operation on file '{fileName}'");
             }
         }
     }

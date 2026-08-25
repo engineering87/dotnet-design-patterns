@@ -1,4 +1,9 @@
 # Factory Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/factory-method.svg" alt="UML diagram of the Factory pattern">
+</p>
+
 The Factory Design Pattern is a creational design pattern that provides an interface for creating objects in a super class but allows subclasses to alter the type of objects that will be created. Essentially, the Factory Pattern defines an interface or abstract class for creating an object, but it lets the subclasses decide which class to instantiate. This pattern promotes loose coupling by eliminating the need to bind application-specific classes into the code.
 
 ## Key Concepts of the Factory Pattern

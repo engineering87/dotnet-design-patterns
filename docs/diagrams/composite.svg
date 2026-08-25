@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 566 421" width="566" height="421" role="img" aria-label="Composite">
+  <rect x="0.5" y="0.5" width="565" height="420" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#58a6ff"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Composite</text>
+  <path d="M120.0 232.0 L120.0 189.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="120.0,178.0 126.0,189.0 114.0,189.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M402.0 232.0 L402.0 205.0 L120.0 205.0 L120.0 189.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="120.0,178.0 126.0,189.0 114.0,189.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M418.0 232.0 L418.0 217.0 L136.0 217.0 L136.0 178.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="418.0,232.0 422.5,226.0 418.0,220.0 413.5,226.0" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <rect x="106.2" y="209.0" width="59.6" height="16" rx="4" fill="#0d1117"/>
+  <text x="136.0" y="221.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6e7681" text-anchor="middle">children</text>
+  <rect x="24.0" y="58.0" width="192" height="120" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h178 a7 7 0 0 1 7 7 v23 h-192 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="216.0" y2="88.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="120.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileSystemComponent</text>
+  <text x="120.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">abstract</text>
+  <text x="38.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Name : string</text>
+  <text x="38.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Display(depth) : void</text>
+  <text x="38.0" y="162.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ CalculateSize() : long</text>
+  <rect x="24.0" y="232.0" width="192" height="120" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 239.0 a7 7 0 0 1 7 -7 h178 a7 7 0 0 1 7 7 v23 h-192 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="262.0" x2="216.0" y2="262.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="120.0" y="252.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">File</text>
+  <text x="120.0" y="280.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">leaf</text>
+  <text x="38.0" y="298.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- long _size</text>
+  <text x="38.0" y="317.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Display(depth) : void</text>
+  <text x="38.0" y="336.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ CalculateSize() : long</text>
+  <rect x="262.0" y="232.0" width="280" height="139" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M262.0 239.0 a7 7 0 0 1 7 -7 h266 a7 7 0 0 1 7 7 v23 h-280 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="262.0" y1="262.0" x2="542.0" y2="262.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="402.0" y="252.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">Directory</text>
+  <text x="402.0" y="280.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">composite</text>
+  <text x="276.0" y="298.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- List&lt;FileSystemComponent&gt; _children</text>
+  <text x="276.0" y="317.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Add(component) : void</text>
+  <text x="276.0" y="336.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Remove(component) : void</text>
+  <text x="276.0" y="355.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ CalculateSize() : long</text>
+  <text x="24" y="401" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">A leaf and a branch answer the same calls.</text>
+</svg>

@@ -1,5 +1,9 @@
 # Facade Design Pattern
 
+<p align="center">
+  <img src="../../../../docs/diagrams/facade.svg" alt="UML diagram of the Facade pattern">
+</p>
+
 The Facade Design Pattern is a structural pattern that provides a simplified interface to a complex subsystem. It aims to make a system easier to use by hiding its complexities behind a unified interface.
 
 ## Key Concepts of the Facade Pattern
@@ -32,7 +36,7 @@ class Program
     {
         // Create a facade instance
         var fileManager = new FileManagerFacade();
-        
+
         // Use the facade to process a file
         fileManager.ProcessFile("path/to/file.txt", "New content");
     }

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 838 466" width="838" height="466" role="img" aria-label="Adapter">
+  <rect x="0.5" y="0.5" width="837" height="465" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#58a6ff"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Adapter</text>
+  <path d="M147.0 194.0 L147.0 167.0 L429.0 167.0 L429.0 151.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="429.0,140.0 435.0,151.0 423.0,151.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M701.0 194.0 L701.0 167.0 L429.0 167.0 L429.0 151.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="429.0,140.0 435.0,151.0 423.0,151.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M147.0 280.0 L147.0 334.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="147.0,280.0 142.5,286.0 147.0,292.0 151.5,286.0" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <path d="M701.0 280.0 L701.0 334.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="701.0,280.0 696.5,286.0 701.0,292.0 705.5,286.0" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <rect x="316.0" y="58.0" width="226" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M316.0 65.0 a7 7 0 0 1 7 -7 h212 a7 7 0 0 1 7 7 v23 h-226 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="316.0" y1="88.0" x2="542.0" y2="88.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="429.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">ISystemInfo</text>
+  <text x="429.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="330.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ GetSystemDetails() : string</text>
+  <rect x="34.0" y="194.0" width="226" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M34.0 201.0 a7 7 0 0 1 7 -7 h212 a7 7 0 0 1 7 7 v23 h-226 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="34.0" y1="224.0" x2="260.0" y2="224.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="147.0" y="214.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">WindowsAdapter</text>
+  <text x="48.0" y="245.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- WindowsOS _windowsOS</text>
+  <text x="48.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ GetSystemDetails() : string</text>
+  <rect x="588.0" y="194.0" width="226" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M588.0 201.0 a7 7 0 0 1 7 -7 h212 a7 7 0 0 1 7 7 v23 h-226 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="588.0" y1="224.0" x2="814.0" y2="224.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="701.0" y="214.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">LinuxAdapter</text>
+  <text x="602.0" y="245.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- LinuxOS _linuxOS</text>
+  <text x="602.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ GetSystemDetails() : string</text>
+  <rect x="24.0" y="334.0" width="246" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 341.0 a7 7 0 0 1 7 -7 h232 a7 7 0 0 1 7 7 v23 h-246 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="364.0" x2="270.0" y2="364.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="147.0" y="354.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">WindowsOS</text>
+  <text x="147.0" y="382.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">adaptee</text>
+  <text x="38.0" y="400.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ RetrieveWindowsInfo() : string</text>
+  <rect x="595.0" y="334.0" width="212" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M595.0 341.0 a7 7 0 0 1 7 -7 h198 a7 7 0 0 1 7 7 v23 h-212 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="595.0" y1="364.0" x2="807.0" y2="364.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="701.0" y="354.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">LinuxOS</text>
+  <text x="701.0" y="382.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">adaptee</text>
+  <text x="609.0" y="400.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ FetchLinuxInfo() : string</text>
+  <text x="24" y="446" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">Each adapter presents an existing class through the wanted interface.</text>
+</svg>

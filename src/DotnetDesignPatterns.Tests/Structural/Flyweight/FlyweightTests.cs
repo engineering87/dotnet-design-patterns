@@ -10,13 +10,14 @@ namespace DotnetDesignPatterns.Tests.Structural.Flyweight
         public void FileMetadataFactory_GetFileMetadata_ShouldCreateNewMetadata()
         {
             // Arrange
-            var factory = new FileMetadataFactory();
+            var output = new StringWriter();
+            var factory = new FileMetadataFactory { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => factory.GetFileMetadata("pdf", "admin"));
+            factory.GetFileMetadata("pdf", "admin");
 
             // Assert
-            Assert.Contains("Creating new file metadata", output);
+            Assert.Contains("Creating new file metadata", output.ToString());
         }
 
         [Fact]
@@ -37,14 +38,15 @@ namespace DotnetDesignPatterns.Tests.Structural.Flyweight
         public void FileMetadataFactory_GetFileMetadata_ShouldReuseCachedMetadata()
         {
             // Arrange
-            var factory = new FileMetadataFactory();
+            var output = new StringWriter();
+            var factory = new FileMetadataFactory { Output = output };
             factory.GetFileMetadata("txt", "user1");
 
             // Act
-            var output = CaptureConsoleOutput(() => factory.GetFileMetadata("txt", "user1"));
+            factory.GetFileMetadata("txt", "user1");
 
             // Assert
-            Assert.Contains("Reusing existing file metadata", output);
+            Assert.Contains("Reusing existing file metadata", output.ToString());
         }
 
         [Fact]
@@ -126,15 +128,16 @@ namespace DotnetDesignPatterns.Tests.Structural.Flyweight
         public void FileMetadata_DisplayFileInfo_ShouldOutputCorrectInfo()
         {
             // Arrange
-            var factory = new FileMetadataFactory();
+            var output = new StringWriter();
+            var factory = new FileMetadataFactory { Output = output };
             var metadata = factory.GetFileMetadata("xlsx", "finance");
 
             // Act
-            var output = CaptureConsoleOutput(() => metadata.DisplayFileInfo());
+            metadata.DisplayFileInfo();
 
             // Assert
-            Assert.Contains("xlsx", output);
-            Assert.Contains("finance", output);
+            Assert.Contains("xlsx", output.ToString());
+            Assert.Contains("finance", output.ToString());
         }
 
         [Fact]
@@ -158,20 +161,5 @@ namespace DotnetDesignPatterns.Tests.Structural.Flyweight
             Assert.Equal(1, factory.CacheCount);
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

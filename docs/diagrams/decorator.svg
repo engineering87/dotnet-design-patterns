@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 993 466" width="993" height="466" role="img" aria-label="Decorator">
+  <rect x="0.5" y="0.5" width="992" height="465" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#58a6ff"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Decorator</text>
+  <path d="M113.0 194.0 L113.0 167.0 L337.0 167.0 L337.0 151.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="337.0,140.0 343.0,151.0 331.0,151.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M581.5 194.0 L581.5 167.0 L337.0 167.0 L337.0 151.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="337.0,140.0 343.0,151.0 331.0,151.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M597.5 194.0 L597.5 179.0 L353.0 179.0 L353.0 140.0" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="597.5,194.0 602.0,188.0 597.5,182.0 593.0,188.0" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <rect x="332.5" y="171.0" width="41.0" height="16" rx="4" fill="#0d1117"/>
+  <text x="353.0" y="183.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6e7681" text-anchor="middle">wraps</text>
+  <path d="M337.0 330.0 L337.0 303.0 L581.5 303.0 L581.5 287.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="581.5,276.0 587.5,287.0 575.5,287.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M581.5 330.0 L581.5 287.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="581.5,276.0 587.5,287.0 575.5,287.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M853.0 330.0 L853.0 303.0 L581.5 303.0 L581.5 287.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="581.5,276.0 587.5,287.0 575.5,287.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <rect x="248.0" y="58.0" width="178" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M248.0 65.0 a7 7 0 0 1 7 -7 h164 a7 7 0 0 1 7 7 v23 h-178 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="248.0" y1="88.0" x2="426.0" y2="88.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="337.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">Notification</text>
+  <text x="337.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">abstract</text>
+  <text x="262.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Send(message) : void</text>
+  <rect x="24.0" y="194.0" width="178" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 201.0 a7 7 0 0 1 7 -7 h164 a7 7 0 0 1 7 7 v23 h-178 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="224.0" x2="202.0" y2="224.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="113.0" y="214.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">BasicNotification</text>
+  <text x="38.0" y="245.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Send(message) : void</text>
+  <rect x="472.0" y="194.0" width="219" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M472.0 201.0 a7 7 0 0 1 7 -7 h205 a7 7 0 0 1 7 7 v23 h-219 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="472.0" y1="224.0" x2="691.0" y2="224.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="581.5" y="214.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">NotificationDecorator</text>
+  <text x="581.5" y="242.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">abstract</text>
+  <text x="486.0" y="260.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># Notification _notification</text>
+  <rect x="248.0" y="330.0" width="178" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M248.0 337.0 a7 7 0 0 1 7 -7 h164 a7 7 0 0 1 7 7 v23 h-178 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="248.0" y1="360.0" x2="426.0" y2="360.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="337.0" y="350.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">LoggingDecorator</text>
+  <text x="262.0" y="381.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Send(message) : void</text>
+  <text x="262.0" y="400.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- Log(message) : void</text>
+  <rect x="475.5" y="330.0" width="212" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M475.5 337.0 a7 7 0 0 1 7 -7 h198 a7 7 0 0 1 7 7 v23 h-212 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="475.5" y1="360.0" x2="687.5" y2="360.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="581.5" y="350.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">EncryptionDecorator</text>
+  <text x="489.5" y="381.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Send(message) : void</text>
+  <text x="489.5" y="400.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- Encrypt(message) : string</text>
+  <rect x="737.0" y="330.0" width="232" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M737.0 337.0 a7 7 0 0 1 7 -7 h218 a7 7 0 0 1 7 7 v23 h-232 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="737.0" y1="360.0" x2="969.0" y2="360.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="853.0" y="350.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">PrioritizationDecorator</text>
+  <text x="751.0" y="381.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Send(message) : void</text>
+  <text x="751.0" y="400.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- Prioritize(message) : string</text>
+  <text x="24" y="446" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">Each decorator wraps a notification and adds one responsibility.</text>
+</svg>

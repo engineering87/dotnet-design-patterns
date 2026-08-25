@@ -1,4 +1,9 @@
-﻿# Strategy Design Pattern
+# Strategy Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/strategy.svg" alt="UML diagram of the Strategy pattern">
+</p>
+
 The Strategy design pattern is a behavioral pattern that defines a family of algorithms, encapsulates each algorithm, and makes them interchangeable. This pattern allows a client to choose an algorithm from a family of algorithms at runtime. It's particularly useful when you need to select a specific behavior or strategy dynamically.
 
 ## Key Concepts of the Strategy Pattern

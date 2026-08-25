@@ -2,41 +2,48 @@
 // This code is licensed under MIT license (see LICENSE.txt for details)
 namespace DotnetDesignPatterns.Creational.Singleton
 {
+    /// <summary>
+    /// A singleton built with double-checked locking, kept as a counterpoint to the Lazy&lt;T&gt; version.
+    /// </summary>
     public sealed class LockSingleton
     {
-        // Private static instance of the Singleton class
-        private static LockSingleton? _instance = null;
-        // Object used for locking
+        // The field is volatile because double-checked locking is not guaranteed
+        // to be correct by ECMA-335 without it, even though the Microsoft CLR
+        // gives release semantics to writes. See CA2002 and the Microsoft guidance
+        // on the lazy initialization pattern.
+        private static volatile LockSingleton? _instance;
         private static readonly object _lock = new();
 
-        // Private constructor to prevent instantiation from outside
+        // The constructor is private so that no other instance can be created.
         private LockSingleton()
         {
-            // Initialize the singleton instance
         }
 
-        // Public static method to get the singleton instance
+        /// <summary>
+        /// The single instance, created under a lock on first access.
+        /// </summary>
+        /// <returns>The one instance of the class.</returns>
         public static LockSingleton Instance
         {
             get
             {
-                // Check if the instance is null
+                // The fast path: once the instance exists, no lock is taken.
                 if (_instance == null)
                 {
-                    // Lock to ensure that only one thread can enter this block at a time
                     lock (_lock)
                     {
-                        // Double-check if the instance is still null
-                        // Create the singleton instance
+                        // The second check: another thread may have won the race
+                        // between the first check and this lock.
                         _instance ??= new LockSingleton();
                     }
                 }
-                // Return the singleton instance
                 return _instance;
             }
         }
 
-        // Example method
+        /// <summary>
+        /// Stands in for whatever shared resource the singleton owns.
+        /// </summary>
         public void DoSomething()
         {
             // Do something

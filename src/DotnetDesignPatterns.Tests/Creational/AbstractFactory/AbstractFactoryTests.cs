@@ -38,30 +38,32 @@ namespace DotnetDesignPatterns.Tests.Creational.AbstractFactory
         public void LinuxOS_DisplayInfo_ShouldOutputLinuxInfo()
         {
             // Arrange
-            var factory = new LinuxOSFactory();
+            var output = new StringWriter();
+            var factory = new LinuxOSFactory { Output = output };
             var os = factory.CreateOperatingSystem();
 
             // Act
-            var output = CaptureConsoleOutput(() => os.DisplayInfo());
+            os.DisplayInfo();
 
             // Assert
-            Assert.NotNull(output);
-            Assert.Contains("Linux", output, StringComparison.OrdinalIgnoreCase);
+            Assert.NotEmpty(output.ToString());
+            Assert.Contains("Linux", output.ToString(), StringComparison.OrdinalIgnoreCase);
         }
 
         [Fact]
         public void WindowsOS_DisplayInfo_ShouldOutputWindowsInfo()
         {
             // Arrange
-            var factory = new WindowsOSFactory();
+            var output = new StringWriter();
+            var factory = new WindowsOSFactory { Output = output };
             var os = factory.CreateOperatingSystem();
 
             // Act
-            var output = CaptureConsoleOutput(() => os.DisplayInfo());
+            os.DisplayInfo();
 
             // Assert
-            Assert.NotNull(output);
-            Assert.Contains("Windows", output, StringComparison.OrdinalIgnoreCase);
+            Assert.NotEmpty(output.ToString());
+            Assert.Contains("Windows", output.ToString(), StringComparison.OrdinalIgnoreCase);
         }
 
         [Fact]
@@ -105,20 +107,5 @@ namespace DotnetDesignPatterns.Tests.Creational.AbstractFactory
             Assert.IsType<WindowsOS>(windowsOs);
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

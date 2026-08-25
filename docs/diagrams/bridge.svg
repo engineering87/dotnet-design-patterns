@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 824 368" width="824" height="368" role="img" aria-label="Bridge">
+  <rect x="0.5" y="0.5" width="823" height="367" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#58a6ff"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Bridge</text>
+  <path d="M160.5 232.0 L160.5 189.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="160.5,178.0 166.5,189.0 154.5,189.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M469.5 232.0 L469.5 170.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="469.5,159.0 475.5,170.0 463.5,170.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M721.0 232.0 L721.0 195.5 L469.5 195.5 L469.5 170.0" fill="none" stroke="#58a6ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="469.5,159.0 475.5,170.0 463.5,170.0" fill="#0d1117" stroke="#58a6ff" stroke-width="1.4"/>
+  <path d="M297.0 118.0 L343.0 108.5" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="297.0,118.0 303.8,121.2 308.8,115.6 302.0,112.4" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <rect x="24.0" y="58.0" width="273" height="120" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h259 a7 7 0 0 1 7 7 v23 h-273 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="297.0" y2="88.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="160.5" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileManager</text>
+  <text x="160.5" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">abstract</text>
+  <text x="38.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># IFileSystem _fileSystem</text>
+  <text x="38.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ SaveFile(fileName, content) : void</text>
+  <text x="38.0" y="162.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ ReadFile(fileName) : string</text>
+  <rect x="343.0" y="58.0" width="253" height="101" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M343.0 65.0 a7 7 0 0 1 7 -7 h239 a7 7 0 0 1 7 7 v23 h-253 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="343.0" y1="88.0" x2="596.0" y2="88.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="469.5" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IFileSystem</text>
+  <text x="469.5" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="357.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ WriteToFile(fileName, content)</text>
+  <text x="357.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ ReadFromFile(fileName) : string</text>
+  <rect x="47.5" y="232.0" width="226" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M47.5 239.0 a7 7 0 0 1 7 -7 h212 a7 7 0 0 1 7 7 v23 h-226 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="47.5" y1="262.0" x2="273.5" y2="262.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="160.5" y="252.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">TextFileManager</text>
+  <text x="61.5" y="283.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ SaveFile(fileName, content)</text>
+  <text x="61.5" y="302.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ ReadFile(fileName) : string</text>
+  <rect x="389.0" y="232.0" width="161" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M389.0 239.0 a7 7 0 0 1 7 -7 h147 a7 7 0 0 1 7 7 v23 h-161 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="389.0" y1="262.0" x2="550.0" y2="262.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="469.5" y="252.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">WindowsFileSystem</text>
+  <text x="403.0" y="283.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ WriteToFile(...)</text>
+  <text x="403.0" y="302.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ ReadFromFile(...)</text>
+  <rect x="642.0" y="232.0" width="158" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M642.0 239.0 a7 7 0 0 1 7 -7 h144 a7 7 0 0 1 7 7 v23 h-158 z" fill="#58a6ff" fill-opacity="0.13"/>
+  <line x1="642.0" y1="262.0" x2="800.0" y2="262.0" stroke="#58a6ff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="721.0" y="252.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">LinuxFileSystem</text>
+  <text x="656.0" y="283.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ WriteToFile(...)</text>
+  <text x="656.0" y="302.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ ReadFromFile(...)</text>
+  <text x="24" y="348" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">Abstraction and implementation vary on separate axes.</text>
+</svg>

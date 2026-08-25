@@ -1,144 +1,199 @@
 // (c) 2024 Francesco Del Re <francesco.delre.87@gmail.com>
 // This code is licensed under MIT license (see LICENSE.txt for details)
+using DotnetDesignPatterns.Behavioral.TemplateMethod;
 
 namespace DotnetDesignPatterns.Tests.Behavioral.TemplateMethod
 {
     public class TemplateMethodTests
     {
         [Fact]
-        public void TestFileProcessor_ProcessFile_ShouldFollowTemplateOrder()
+        public void ProcessFile_ShouldRunTheStepsInTheOrderDefinedByTheTemplate()
         {
             // Arrange
-            var processor = new TestFileProcessor();
-            var callOrder = new List<string>();
-            processor.OnOpenFile = () => callOrder.Add("OpenFile");
-            processor.OnReadFileContent = () => { callOrder.Add("ReadFileContent"); return "test content"; };
-            processor.OnProcessContent = () => callOrder.Add("ProcessContent");
-            processor.OnCloseFile = () => callOrder.Add("CloseFile");
+            var processor = new RecordingFileProcessor();
 
             // Act
             processor.ProcessFile("test.txt");
 
             // Assert
-            Assert.Equal(4, callOrder.Count);
-            Assert.Equal("OpenFile", callOrder[0]);
-            Assert.Equal("ReadFileContent", callOrder[1]);
-            Assert.Equal("ProcessContent", callOrder[2]);
-            Assert.Equal("CloseFile", callOrder[3]);
+            Assert.Equal("OpenFile > ReadFileContent > ProcessContent > CloseFile",
+                string.Join(" > ", processor.CallOrder));
         }
 
         [Fact]
-        public void TestFileProcessor_OpenFile_ShouldBeOverridable()
+        public void ProcessFile_ShouldPassTheContentReadToTheProcessingStep()
         {
             // Arrange
-            var customOpenFileCalled = false;
-            var processor = new TestFileProcessor
-            {
-                OnOpenFile = () => customOpenFileCalled = true
-            };
+            var processor = new RecordingFileProcessor { Content = "content to be processed" };
 
             // Act
             processor.ProcessFile("test.txt");
 
             // Assert
-            Assert.True(customOpenFileCalled);
+            Assert.Equal("content to be processed", processor.ReceivedContent);
         }
 
         [Fact]
-        public void TestFileProcessor_CloseFile_ShouldBeOverridable()
+        public void OpenFile_AndCloseFile_ShouldHaveAUsableDefaultImplementation()
         {
             // Arrange
-            var customCloseFileCalled = false;
-            var processor = new TestFileProcessor
-            {
-                OnCloseFile = () => customCloseFileCalled = true
-            };
+            var output = new StringWriter();
+            var processor = new DefaultStepsFileProcessor { Output = output };
 
             // Act
             processor.ProcessFile("test.txt");
 
             // Assert
-            Assert.True(customCloseFileCalled);
+            Assert.Contains("Opening file: test.txt", output.ToString());
+            Assert.Contains("Closing file.", output.ToString());
         }
 
         [Fact]
-        public void TestFileProcessor_ReadFileContent_ShouldReturnContent()
+        public void TextFileProcessor_ShouldReadAndUppercaseTheFileContent()
         {
             // Arrange
-            var expectedContent = "Expected file content";
-            var processor = new TestFileProcessor
+            var output = new StringWriter();
+            var path = CreateTemporaryFile("hello template method");
+            var processor = new TextFileProcessor { Output = output };
+
+            try
             {
-                OnReadFileContent = () => expectedContent
-            };
-            string? actualContent = null;
-            processor.OnProcessContent = () => actualContent = processor.LastReadContent;
+                // Act
+                processor.ProcessFile(path);
 
-            // Act
-            processor.ProcessFile("test.txt");
-
-            // Assert
-            Assert.Equal(expectedContent, actualContent);
+                // Assert
+                Assert.Contains("Reading text file content", output.ToString());
+                Assert.Contains("HELLO TEMPLATE METHOD", output.ToString());
+            }
+            finally
+            {
+                File.Delete(path);
+            }
         }
 
         [Fact]
-        public void TestFileProcessor_ProcessContent_ShouldReceiveReadContent()
+        public void TextFileProcessor_ShouldReleaseTheFileHandleWhenDone()
         {
             // Arrange
-            var processor = new TestFileProcessor();
-            var contentToProcess = "Content to be processed";
-            processor.OnReadFileContent = () => contentToProcess;
-            string? processedContent = null;
-            processor.OnProcessContent = () => processedContent = processor.LastReadContent;
+            var output = new StringWriter();
+            var path = CreateTemporaryFile("content");
+            var processor = new TextFileProcessor { Output = output };
 
-            // Act
-            processor.ProcessFile("test.txt");
+            try
+            {
+                // Act
+                processor.ProcessFile(path);
 
-            // Assert
-            Assert.Equal(contentToProcess, processedContent);
+                // Assert: the file can be deleted only if the reader was disposed
+                var exception = Record.Exception(() => File.Delete(path));
+                Assert.Null(exception);
+            }
+            finally
+            {
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+            }
         }
 
-        private class TestFileProcessor
+        [Fact]
+        public void CsvFileProcessor_ShouldProcessEveryNonEmptyLine()
         {
-            public Action? OnOpenFile { get; set; }
-            public Func<string>? OnReadFileContent { get; set; }
-            public Action? OnProcessContent { get; set; }
-            public Action? OnCloseFile { get; set; }
-            public string? LastReadContent { get; private set; }
+            // Arrange
+            var output = new StringWriter();
+            var path = CreateTemporaryFile("name,size\nreport.txt,120\n\nnotes.txt,64");
+            var processor = new CsvFileProcessor { Output = output };
 
-            public void ProcessFile(string filePath)
+            try
             {
-                OpenFile(filePath);
-                LastReadContent = ReadFileContent();
-                ProcessContent(LastReadContent);
-                CloseFile();
+                // Act
+                processor.ProcessFile(path);
+
+                // Assert
+                Assert.Contains("Reading CSV file content", output.ToString());
+                Assert.Contains("name | size", output.ToString());
+                Assert.Contains("report.txt | 120", output.ToString());
+                Assert.Contains("notes.txt | 64", output.ToString());
+            }
+            finally
+            {
+                File.Delete(path);
+            }
+        }
+
+        [Fact]
+        public void CsvFileProcessor_WithEmptyFile_ShouldProcessNothing()
+        {
+            // Arrange
+            var output = new StringWriter();
+            var path = CreateTemporaryFile(string.Empty);
+            var processor = new CsvFileProcessor { Output = output };
+
+            try
+            {
+                // Act
+                processor.ProcessFile(path);
+
+                // Assert
+                Assert.DoesNotContain("Processed CSV line", output.ToString());
+            }
+            finally
+            {
+                File.Delete(path);
+            }
+        }
+
+        private static string CreateTemporaryFile(string content)
+        {
+            var path = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid():N}.txt");
+            File.WriteAllText(path, content);
+            return path;
+        }
+
+        // A concrete subclass that records the template steps instead of touching the disk.
+        // It exercises the real abstract base class rather than reimplementing the pattern.
+        private sealed class RecordingFileProcessor : FileProcessor
+        {
+            private readonly List<string> _callOrder = new();
+
+            public string Content { get; set; } = "default content";
+
+            public IReadOnlyList<string> CallOrder => _callOrder;
+
+            public string? ReceivedContent { get; private set; }
+
+            protected override void OpenFile(string filePath)
+            {
+                _callOrder.Add("OpenFile");
             }
 
-            private void OpenFile(string filePath)
+            protected override string ReadFileContent()
             {
-                if (OnOpenFile != null)
-                    OnOpenFile();
-                else
-                    Console.WriteLine($"Opening file: {filePath}");
+                _callOrder.Add("ReadFileContent");
+                return Content;
             }
 
-            private string ReadFileContent()
+            protected override void ProcessContent(string content)
             {
-                if (OnReadFileContent != null)
-                    return OnReadFileContent();
-                return "default content";
+                _callOrder.Add("ProcessContent");
+                ReceivedContent = content;
             }
 
-            private void ProcessContent(string content)
+            protected override void CloseFile()
             {
-                OnProcessContent?.Invoke();
+                _callOrder.Add("CloseFile");
             }
+        }
 
-            private void CloseFile()
+        // A subclass that overrides only the mandatory steps, so that the default
+        // implementations of OpenFile and CloseFile are the ones under test.
+        private sealed class DefaultStepsFileProcessor : FileProcessor
+        {
+            protected override string ReadFileContent() => "content";
+
+            protected override void ProcessContent(string content)
             {
-                if (OnCloseFile != null)
-                    OnCloseFile();
-                else
-                    Console.WriteLine("Closing file.");
             }
         }
     }

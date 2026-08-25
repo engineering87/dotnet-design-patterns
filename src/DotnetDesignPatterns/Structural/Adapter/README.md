@@ -1,4 +1,8 @@
-﻿# Adapter Design Pattern
+# Adapter Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/adapter.svg" alt="UML diagram of the Adapter pattern">
+</p>
 
 The Adapter Design Pattern is a structural pattern that allows objects with incompatible interfaces to work together. It acts as a bridge between two incompatible interfaces, enabling them to communicate. This pattern is especially useful when integrating new components with existing systems where the interfaces do not match.
 

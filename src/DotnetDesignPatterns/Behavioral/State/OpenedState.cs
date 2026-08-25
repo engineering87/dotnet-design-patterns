@@ -3,22 +3,43 @@
 namespace DotnetDesignPatterns.Behavioral.State
 {
     // Concrete State: Opened
+    /// <summary>
+    /// The state of a file that is open and can be edited.
+    /// </summary>
     public class OpenedState : IFileState
     {
+        /// <summary>
+        /// Rejects the request, since the file is already open.
+        /// </summary>
+        /// <param name="context">The context whose state may change.</param>
         public void Open(FileContext context)
         {
-            Console.WriteLine("File is already opened.");
+            ArgumentNullException.ThrowIfNull(context);
+
+            context.Output.WriteLine("File is already opened.");
         }
 
+        /// <summary>
+        /// Closes the file and moves the context to the closed state.
+        /// </summary>
+        /// <param name="context">The context whose state may change.</param>
         public void Close(FileContext context)
         {
-            Console.WriteLine("File closed.");
+            ArgumentNullException.ThrowIfNull(context);
+
+            context.Output.WriteLine("File closed.");
             context.State = new ClosedState();
         }
 
+        /// <summary>
+        /// Edits the file.
+        /// </summary>
+        /// <param name="context">The context whose state may change.</param>
         public void Edit(FileContext context)
         {
-            Console.WriteLine("File is being edited.");
+            ArgumentNullException.ThrowIfNull(context);
+
+            context.Output.WriteLine("File is being edited.");
         }
     }
 }

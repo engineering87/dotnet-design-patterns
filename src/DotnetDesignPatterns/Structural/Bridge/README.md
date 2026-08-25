@@ -1,5 +1,9 @@
 # Bridge Design Pattern
 
+<p align="center">
+  <img src="../../../../docs/diagrams/bridge.svg" alt="UML diagram of the Bridge pattern">
+</p>
+
 The Bridge Design Pattern is a structural pattern that decouples an abstraction from its implementation so that the two can vary independently. This pattern is useful when you need to separate a complex abstraction from its implementation to allow both to evolve independently.
 
 ## Key Concepts of the Bridge Pattern

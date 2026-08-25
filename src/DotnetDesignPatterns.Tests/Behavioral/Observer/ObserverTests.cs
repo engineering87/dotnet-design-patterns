@@ -118,44 +118,30 @@ namespace DotnetDesignPatterns.Tests.Behavioral.Observer
         public void ConsoleLogger_Update_ShouldLogMessage()
         {
             // Arrange
-            var logger = new ConsoleLogger();
+            var output = new StringWriter();
+            var logger = new ConsoleLogger { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => logger.Update("test.txt", "modified"));
+            logger.Update("test.txt", "modified");
 
             // Assert
-            Assert.Contains("test.txt", output);
-            Assert.Contains("modified", output);
+            Assert.Contains("test.txt", output.ToString());
+            Assert.Contains("modified", output.ToString());
         }
 
         [Fact]
         public void EmailNotifier_Update_ShouldSendNotification()
         {
             // Arrange
-            var notifier = new EmailNotifier();
+            var output = new StringWriter();
+            var notifier = new EmailNotifier { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => notifier.Update("document.pdf", "created"));
+            notifier.Update("document.pdf", "created");
 
             // Assert
-            Assert.Contains("document.pdf", output);
-            Assert.Contains("created", output);
-        }
-
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
+            Assert.Contains("document.pdf", output.ToString());
+            Assert.Contains("created", output.ToString());
         }
 
         private class TestObserver : IFileObserver

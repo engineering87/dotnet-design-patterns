@@ -1,4 +1,9 @@
 # Composite Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/composite.svg" alt="UML diagram of the Composite pattern">
+</p>
+
 The Composite Design Pattern is a structural pattern that allows you to compose objects into tree structures to represent part-whole hierarchies. This pattern is useful when you want to treat individual objects and compositions of objects uniformly.
 
 ## Key Concepts of the Composite Pattern

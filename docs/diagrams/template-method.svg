@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 586 425" width="586" height="425" role="img" aria-label="Template Method">
+  <rect x="0.5" y="0.5" width="585" height="424" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#bc8cff"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Template Method</text>
+  <path d="M147.0 270.0 L147.0 227.0" fill="none" stroke="#bc8cff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="147.0,216.0 153.0,227.0 141.0,227.0" fill="#0d1117" stroke="#bc8cff" stroke-width="1.4"/>
+  <path d="M439.0 270.0 L439.0 243.0 L147.0 243.0 L147.0 227.0" fill="none" stroke="#bc8cff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="147.0,216.0 153.0,227.0 141.0,227.0" fill="#0d1117" stroke="#bc8cff" stroke-width="1.4"/>
+  <rect x="24.0" y="58.0" width="246" height="158" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h232 a7 7 0 0 1 7 7 v23 h-246 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="270.0" y2="88.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="147.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileProcessor</text>
+  <text x="147.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff" text-anchor="middle" letter-spacing="0.4">abstract</text>
+  <text x="38.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ ProcessFile(filePath) : void</text>
+  <text x="38.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># OpenFile(filePath) : void</text>
+  <text x="38.0" y="162.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># ReadFileContent() : string</text>
+  <text x="38.0" y="181.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># ProcessContent(content) : void</text>
+  <text x="38.0" y="200.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># CloseFile() : void</text>
+  <rect x="24.0" y="270.0" width="246" height="105" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 277.0 a7 7 0 0 1 7 -7 h232 a7 7 0 0 1 7 7 v23 h-246 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="300.0" x2="270.0" y2="300.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="147.0" y="290.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">TextFileProcessor</text>
+  <text x="38.0" y="321.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- StreamReader? _reader</text>
+  <text x="38.0" y="340.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># ReadFileContent() : string</text>
+  <text x="38.0" y="359.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># ProcessContent(content) : void</text>
+  <rect x="316.0" y="270.0" width="246" height="105" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M316.0 277.0 a7 7 0 0 1 7 -7 h232 a7 7 0 0 1 7 7 v23 h-246 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="316.0" y1="300.0" x2="562.0" y2="300.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="439.0" y="290.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">CsvFileProcessor</text>
+  <text x="330.0" y="321.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- StreamReader? _reader</text>
+  <text x="330.0" y="340.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># ReadFileContent() : string</text>
+  <text x="330.0" y="359.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e"># ProcessContent(content) : void</text>
+  <text x="24" y="405" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">The base class fixes the order, the subclasses fill in the steps.</text>
+</svg>

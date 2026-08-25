@@ -1,4 +1,9 @@
 # Decorator Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/decorator.svg" alt="UML diagram of the Decorator pattern">
+</p>
+
 The Decorator Design Pattern is a structural pattern that allows you to dynamically add behavior to objects by wrapping them with additional functionality. This pattern is useful for extending the functionality of objects without modifying their structure.
 
 ## Key Concepts of the Decorator Pattern
@@ -31,8 +36,8 @@ Decorator pattern can be created either using an abstract class or using an inte
         * **No Shared Behavior**: Interfaces cannot define any shared behavior among decorators, so all shared logic must be repeated or handled externally.
         * **More Boilerplate Code**: If many decorators share common behavior, you may end up duplicating code across multiple classes.
 
-* Use an **abstract class** if you have common behavior to share among decorators and don’t need the flexibility of multiple inheritance.
-    * **Pros**: 
+* Use an **abstract class** if you have common behavior to share among decorators and don't need the flexibility of multiple inheritance.
+    * **Pros**:
         * **Shared Behavior**: An abstract class can provide default implementations or shared behavior that all decorators can inherit and reuse.
         * **Ease of Maintenance**: Common functionality can be centralized in the abstract class, reducing duplication and making the code easier to maintain.
     * **Cons**:

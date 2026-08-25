@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 314 368" width="314" height="368" role="img" aria-label="Prototype">
+  <rect x="0.5" y="0.5" width="313" height="367" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#3fb950"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Prototype</text>
+  <path d="M157.0 194.0 L157.0 151.0" fill="none" stroke="#3fb950" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="157.0,140.0 163.0,151.0 151.0,151.0" fill="#0d1117" stroke="#3fb950" stroke-width="1.4"/>
+  <rect x="91.0" y="58.0" width="132" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M91.0 65.0 a7 7 0 0 1 7 -7 h118 a7 7 0 0 1 7 7 v23 h-132 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="91.0" y1="88.0" x2="223.0" y2="88.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="157.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IPrototype&lt;T&gt;</text>
+  <text x="157.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#3fb950" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="105.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Clone() : T</text>
+  <rect x="24.0" y="194.0" width="266" height="124" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 201.0 a7 7 0 0 1 7 -7 h252 a7 7 0 0 1 7 7 v23 h-266 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="24.0" y1="224.0" x2="290.0" y2="224.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="157.0" y="214.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">OperatingSystemSettings</text>
+  <text x="38.0" y="245.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ OSName : string</text>
+  <text x="38.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Version : string</text>
+  <text x="38.0" y="283.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Clone() : OperatingSystemSettings</text>
+  <text x="38.0" y="302.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ DisplaySettings() : void</text>
+  <text x="24" y="348" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">A new instance is produced by copying an existing one.</text>
+</svg>

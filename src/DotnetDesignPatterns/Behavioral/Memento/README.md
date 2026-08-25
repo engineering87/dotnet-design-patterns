@@ -1,4 +1,9 @@
-﻿# Memento Design Pattern
+# Memento Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/memento.svg" alt="UML diagram of the Memento pattern">
+</p>
+
 The Memento design pattern is a behavioral pattern that allows capturing and externalizing an object's internal state without violating its encapsulation. The object can be restored to this state later. This pattern is particularly useful in scenarios where you need to implement undo/redo functionality.
 
 ## Key Concepts of the Memento Pattern

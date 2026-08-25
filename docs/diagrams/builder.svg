@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 516" width="580" height="516" role="img" aria-label="Builder">
+  <rect x="0.5" y="0.5" width="579" height="515" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#3fb950"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Builder</text>
+  <path d="M164.0 289.0 L164.0 246.0" fill="none" stroke="#3fb950" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="164.0,235.0 170.0,246.0 158.0,246.0" fill="#0d1117" stroke="#3fb950" stroke-width="1.4"/>
+  <path d="M290.5 332.0 L350.0 377.5" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="290.5,332.0 292.5,339.2 300.0,339.3 298.0,332.1" fill="#0d1117" stroke="#6e7681" stroke-width="1.4"/>
+  <rect x="296.6" y="346.8" width="47.2" height="16" rx="4" fill="#0d1117"/>
+  <text x="320.2" y="358.8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6e7681" text-anchor="middle">builds</text>
+  <rect x="24.0" y="58.0" width="280" height="177" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h266 a7 7 0 0 1 7 7 v23 h-280 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="304.0" y2="88.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="164.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IOperatingSystemConfigBuilder</text>
+  <text x="164.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#3fb950" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="38.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ SetOSName(osName)</text>
+  <text x="38.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ SetVersion(version)</text>
+  <text x="38.0" y="162.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ SetFileSystem(fileSystem)</text>
+  <text x="38.0" y="181.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ EnableFirewall(enable)</text>
+  <text x="38.0" y="200.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ SetNetworkSettings(networkSettings)</text>
+  <text x="38.0" y="219.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Build() : OperatingSystemConfig</text>
+  <rect x="37.5" y="289.0" width="253" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M37.5 296.0 a7 7 0 0 1 7 -7 h239 a7 7 0 0 1 7 7 v23 h-253 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="37.5" y1="319.0" x2="290.5" y2="319.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="164.0" y="309.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">OperatingSystemConfigBuilder</text>
+  <text x="51.5" y="340.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">- OperatingSystemConfig _config</text>
+  <text x="51.5" y="359.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Build() : OperatingSystemConfig</text>
+  <rect x="350.0" y="289.0" width="206" height="177" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M350.0 296.0 a7 7 0 0 1 7 -7 h192 a7 7 0 0 1 7 7 v23 h-206 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="350.0" y1="319.0" x2="556.0" y2="319.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="453.0" y="309.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">OperatingSystemConfig</text>
+  <text x="453.0" y="337.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#3fb950" text-anchor="middle" letter-spacing="0.4">product</text>
+  <text x="364.0" y="355.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ OSName : string</text>
+  <text x="364.0" y="374.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Version : string</text>
+  <text x="364.0" y="393.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ FileSystem : string</text>
+  <text x="364.0" y="412.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ IsFirewallEnabled : bool</text>
+  <text x="364.0" y="431.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ NetworkSettings : string</text>
+  <text x="364.0" y="450.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ DisplayConfig() : void</text>
+  <text x="24" y="496" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">Each step returns the builder, so the calls chain into one expression.</text>
+</svg>

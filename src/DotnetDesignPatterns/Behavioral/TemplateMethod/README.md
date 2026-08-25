@@ -1,4 +1,9 @@
-﻿# Template Method Design Pattern
+# Template Method Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/template-method.svg" alt="UML diagram of the Template Method pattern">
+</p>
+
 The Template Method design pattern defines the skeleton of an algorithm in a base class, allowing subclasses to override specific steps of the algorithm without changing its structure. It's a behavioral pattern often used to encapsulate the invariant parts of an algorithm, while allowing the variable parts to be redefined by subclasses.
 
 ## Key Concepts of the Template Method

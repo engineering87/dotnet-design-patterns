@@ -1,0 +1,81 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Verify that the diagrams match their specification
+        run: python3 tools/generate_diagrams.py --check
+
+      - name: Restore
+        run: dotnet restore src/DotnetDesignPatterns.sln
+
+      - name: Build
+        run: dotnet build src/DotnetDesignPatterns.sln --configuration Release --no-restore
+
+      - name: Test
+        run: >
+          dotnet test src/DotnetDesignPatterns.sln
+          --configuration Release
+          --no-build
+          --logger "trx;LogFileName=test-results.trx"
+          --collect:"XPlat Code Coverage"
+          --results-directory ${{ github.workspace }}/artifacts/test-results
+
+      - name: Report line coverage
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import glob, xml.etree.ElementTree as ET
+          reports = glob.glob('artifacts/test-results/**/coverage.cobertura.xml', recursive=True)
+          if not reports:
+              print('no coverage report was produced')
+          for path in reports:
+              root = ET.parse(path).getroot()
+              print(f"line coverage {float(root.get('line-rate', 0)) * 100:.1f}%")
+              print(f"branch coverage {float(root.get('branch-rate', 0)) * 100:.1f}%")
+          PY
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: artifacts/test-results
+          if-no-files-found: ignore
+
+  format:
+    name: Formatting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Verify formatting against .editorconfig
+        run: dotnet format src/DotnetDesignPatterns.sln --verify-no-changes --severity error

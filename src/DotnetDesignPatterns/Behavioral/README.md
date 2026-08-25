@@ -1,4 +1,4 @@
-﻿# Behavioral Design Patterns
+# Behavioral Design Patterns
 Behavioral design patterns focus on the interaction between objects and the way responsibilities are distributed among them. These patterns are concerned with algorithms and the assignment of responsibilities between objects. They help in designing systems that are flexible, maintainable, and scalable by defining how objects communicate and collaborate to achieve specific behaviors.
 
 ## Key Concepts of Behavioral Design Patterns

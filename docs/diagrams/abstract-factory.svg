@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1055 330" width="1055" height="330" role="img" aria-label="Abstract Factory">
+  <rect x="0.5" y="0.5" width="1054" height="329" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#3fb950"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Abstract Factory</text>
+  <path d="M187.5 213.0 L187.5 151.0" fill="none" stroke="#3fb950" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="187.5,140.0 193.5,151.0 181.5,151.0" fill="#0d1117" stroke="#3fb950" stroke-width="1.4"/>
+  <path d="M496.5 213.0 L496.5 176.5 L187.5 176.5 L187.5 151.0" fill="none" stroke="#3fb950" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="187.5,140.0 193.5,151.0 181.5,151.0" fill="#0d1117" stroke="#3fb950" stroke-width="1.4"/>
+  <path d="M731.0 213.0 L731.0 170.0" fill="none" stroke="#3fb950" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="731.0,159.0 737.0,170.0 725.0,170.0" fill="#0d1117" stroke="#3fb950" stroke-width="1.4"/>
+  <path d="M948.5 213.0 L948.5 186.0 L731.0 186.0 L731.0 170.0" fill="none" stroke="#3fb950" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="731.0,159.0 737.0,170.0 725.0,170.0" fill="#0d1117" stroke="#3fb950" stroke-width="1.4"/>
+  <path d="M351.0 99.0 L633.0 108.2" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <polygon points="642.0,108.5 632.9,112.4 633.1,104.0" fill="#6e7681"/>
+  <rect x="465.3" y="95.6" width="53.4" height="16" rx="4" fill="#0d1117"/>
+  <text x="492.0" y="107.6" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6e7681" text-anchor="middle">creates</text>
+  <rect x="24.0" y="58.0" width="327" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h313 a7 7 0 0 1 7 7 v23 h-327 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="351.0" y2="88.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="187.5" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IOperatingSystemFactory</text>
+  <text x="187.5" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#3fb950" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="38.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ CreateOperatingSystem() : IOperatingSystem</text>
+  <rect x="642.0" y="58.0" width="178" height="101" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M642.0 65.0 a7 7 0 0 1 7 -7 h164 a7 7 0 0 1 7 7 v23 h-178 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="642.0" y1="88.0" x2="820.0" y2="88.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="731.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IOperatingSystem</text>
+  <text x="731.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#3fb950" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="656.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Configure() : void</text>
+  <text x="656.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ DisplayInfo() : void</text>
+  <rect x="88.0" y="213.0" width="199" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M88.0 220.0 a7 7 0 0 1 7 -7 h185 a7 7 0 0 1 7 7 v23 h-199 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="88.0" y1="243.0" x2="287.0" y2="243.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="187.5" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">WindowsOSFactory</text>
+  <text x="102.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ CreateOperatingSystem()</text>
+  <rect x="397.0" y="213.0" width="199" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M397.0 220.0 a7 7 0 0 1 7 -7 h185 a7 7 0 0 1 7 7 v23 h-199 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="397.0" y1="243.0" x2="596.0" y2="243.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="496.5" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">LinuxOSFactory</text>
+  <text x="411.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ CreateOperatingSystem()</text>
+  <rect x="648.5" y="213.0" width="165" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M648.5 220.0 a7 7 0 0 1 7 -7 h151 a7 7 0 0 1 7 7 v23 h-165 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="648.5" y1="243.0" x2="813.5" y2="243.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="731.0" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">WindowsOS</text>
+  <text x="662.5" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Configure() : void</text>
+  <rect x="866.0" y="213.0" width="165" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M866.0 220.0 a7 7 0 0 1 7 -7 h151 a7 7 0 0 1 7 7 v23 h-165 z" fill="#3fb950" fill-opacity="0.13"/>
+  <line x1="866.0" y1="243.0" x2="1031.0" y2="243.0" stroke="#3fb950" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="948.5" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">LinuxOS</text>
+  <text x="880.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Configure() : void</text>
+  <text x="24" y="310" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">Each factory produces one coherent family of products.</text>
+</svg>

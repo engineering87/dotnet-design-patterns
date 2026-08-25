@@ -10,124 +10,132 @@ namespace DotnetDesignPatterns.Tests.Structural.Decorator
         public void BasicNotification_Send_ShouldOutputMessage()
         {
             // Arrange
-            var notification = new BasicNotification();
+            var output = new StringWriter();
+            var notification = new BasicNotification { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => notification.Send("Hello World"));
+            notification.Send("Hello World");
 
             // Assert
-            Assert.Contains("Hello World", output);
-            Assert.Contains("Sending notification", output);
+            Assert.Contains("Hello World", output.ToString());
+            Assert.Contains("Sending notification", output.ToString());
         }
 
         [Fact]
         public void LoggingDecorator_Send_ShouldLogAndSendMessage()
         {
             // Arrange
-            var basicNotification = new BasicNotification();
-            var loggingDecorator = new LoggingDecorator(basicNotification);
+            var output = new StringWriter();
+            var basicNotification = new BasicNotification { Output = output };
+            var loggingDecorator = new LoggingDecorator(basicNotification) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => loggingDecorator.Send("Test Message"));
+            loggingDecorator.Send("Test Message");
 
             // Assert
-            Assert.Contains("Logging notification", output);
-            Assert.Contains("Sending notification", output);
-            Assert.Contains("Test Message", output);
+            Assert.Contains("Logging notification", output.ToString());
+            Assert.Contains("Sending notification", output.ToString());
+            Assert.Contains("Test Message", output.ToString());
         }
 
         [Fact]
         public void EncryptionDecorator_Send_ShouldEncryptMessage()
         {
             // Arrange
-            var basicNotification = new BasicNotification();
-            var encryptionDecorator = new EncryptionDecorator(basicNotification);
+            var output = new StringWriter();
+            var basicNotification = new BasicNotification { Output = output };
+            var encryptionDecorator = new EncryptionDecorator(basicNotification) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => encryptionDecorator.Send("Secret"));
+            encryptionDecorator.Send("Secret");
 
             // Assert
-            Assert.Contains("[Encrypted]", output);
-            Assert.Contains("Secret", output);
+            Assert.Contains("[Encrypted]", output.ToString());
+            Assert.Contains("Secret", output.ToString());
         }
 
         [Fact]
         public void PrioritizationDecorator_Send_ShouldPrioritizeMessage()
         {
             // Arrange
-            var basicNotification = new BasicNotification();
-            var prioritizationDecorator = new PrioritizationDecorator(basicNotification);
+            var output = new StringWriter();
+            var basicNotification = new BasicNotification { Output = output };
+            var prioritizationDecorator = new PrioritizationDecorator(basicNotification) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => prioritizationDecorator.Send("Urgent"));
+            prioritizationDecorator.Send("Urgent");
 
             // Assert
-            Assert.Contains("[Priority]", output);
-            Assert.Contains("Urgent", output);
+            Assert.Contains("[Priority]", output.ToString());
+            Assert.Contains("Urgent", output.ToString());
         }
 
         [Fact]
         public void ChainedDecorators_ShouldApplyAllDecorations()
         {
             // Arrange
-            var basicNotification = new BasicNotification();
-            var encrypted = new EncryptionDecorator(basicNotification);
-            var prioritized = new PrioritizationDecorator(encrypted);
-            var logged = new LoggingDecorator(prioritized);
+            var output = new StringWriter();
+            var basicNotification = new BasicNotification { Output = output };
+            var encrypted = new EncryptionDecorator(basicNotification) { Output = output };
+            var prioritized = new PrioritizationDecorator(encrypted) { Output = output };
+            var logged = new LoggingDecorator(prioritized) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => logged.Send("Important"));
+            logged.Send("Important");
 
             // Assert
-            Assert.Contains("Logging notification", output);
-            Assert.Contains("[Priority]", output);
-            Assert.Contains("[Encrypted]", output);
-            Assert.Contains("Important", output);
+            Assert.Contains("Logging notification", output.ToString());
+            Assert.Contains("[Priority]", output.ToString());
+            Assert.Contains("[Encrypted]", output.ToString());
+            Assert.Contains("Important", output.ToString());
         }
 
         [Fact]
         public void EncryptionThenPrioritization_ShouldApplyInOrder()
         {
+            var output = new StringWriter();
             // Arrange - Prioritization wraps Encryption, so Priority is applied first, then Encryption
-            var basicNotification = new BasicNotification();
-            var encrypted = new EncryptionDecorator(basicNotification);
-            var prioritized = new PrioritizationDecorator(encrypted);
+            var basicNotification = new BasicNotification { Output = output };
+            var encrypted = new EncryptionDecorator(basicNotification) { Output = output };
+            var prioritized = new PrioritizationDecorator(encrypted) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => prioritized.Send("Data"));
+            prioritized.Send("Data");
 
             // Assert - Priority applied first transforms to [Priority]Data, then Encryption transforms to [Encrypted][Priority]Data
-            Assert.Contains("[Encrypted][Priority]Data", output);
+            Assert.Contains("[Encrypted][Priority]Data", output.ToString());
         }
 
         [Fact]
         public void PrioritizationThenEncryption_ShouldApplyInOrder()
         {
+            var output = new StringWriter();
             // Arrange - Encryption wraps Prioritization, so Encryption is applied first, then Priority
-            var basicNotification = new BasicNotification();
-            var prioritized = new PrioritizationDecorator(basicNotification);
-            var encrypted = new EncryptionDecorator(prioritized);
+            var basicNotification = new BasicNotification { Output = output };
+            var prioritized = new PrioritizationDecorator(basicNotification) { Output = output };
+            var encrypted = new EncryptionDecorator(prioritized) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => encrypted.Send("Data"));
+            encrypted.Send("Data");
 
             // Assert - Encryption applied first transforms to [Encrypted]Data, then Priority transforms to [Priority][Encrypted]Data
-            Assert.Contains("[Priority][Encrypted]Data", output);
+            Assert.Contains("[Priority][Encrypted]Data", output.ToString());
         }
 
         [Fact]
         public void MultipleLoggingDecorators_ShouldLogMultipleTimes()
         {
             // Arrange
-            var basicNotification = new BasicNotification();
-            var logging1 = new LoggingDecorator(basicNotification);
-            var logging2 = new LoggingDecorator(logging1);
+            var output = new StringWriter();
+            var basicNotification = new BasicNotification { Output = output };
+            var logging1 = new LoggingDecorator(basicNotification) { Output = output };
+            var logging2 = new LoggingDecorator(logging1) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => logging2.Send("Message"));
+            logging2.Send("Message");
 
             // Assert
-            var loggingCount = output.Split("Logging notification").Length - 1;
+            var loggingCount = output.ToString().Split("Logging notification").Length - 1;
             Assert.Equal(2, loggingCount);
         }
 
@@ -142,20 +150,5 @@ namespace DotnetDesignPatterns.Tests.Structural.Decorator
             Assert.IsAssignableFrom<Notification>(decorator);
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

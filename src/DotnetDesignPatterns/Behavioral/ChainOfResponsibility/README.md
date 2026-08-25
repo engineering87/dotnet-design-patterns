@@ -1,4 +1,9 @@
-﻿# Chain of Responsibility Design Pattern
+# Chain of Responsibility Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/chain-of-responsibility.svg" alt="UML diagram of the Chain of Responsibility pattern">
+</p>
+
 The Chain of Responsibility design pattern is a behavioral pattern that allows an object to pass a request along a chain of handlers. Each handler in the chain either processes the request or passes it to the next handler in the chain. This pattern is useful for scenarios where multiple objects might handle a request, but the specific handler isn't known beforehand.
 
 ## Key Concepts of the Chain of Responsibility Pattern
@@ -40,7 +45,7 @@ Definition: `FileOperationHandler` defines an interface for handling requests an
 Purpose: Provides the base class for concrete handlers and sets up the chain of responsibility.
 
 * **Concrete Handlers**:
-    - LoggingHandler: 
+    - LoggingHandler:
         - Purpose: Logs file operations.
         - `HandleRequest` Method: Logs the operation and then passes the request to the next handler.
     - AuthorizationHandler:

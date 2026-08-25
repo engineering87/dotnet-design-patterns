@@ -54,29 +54,31 @@ namespace DotnetDesignPatterns.Tests.Behavioral.Visitor
         public void FileListingVisitor_Visit_File_ShouldOutputFileInfo()
         {
             // Arrange
-            var visitor = new FileListingVisitor();
+            var output = new StringWriter();
+            var visitor = new FileListingVisitor { Output = output };
             var file = new File("document.pdf", 2048);
 
             // Act
-            var output = CaptureConsoleOutput(() => visitor.Visit(file));
+            visitor.Visit(file);
 
             // Assert
-            Assert.Contains("document.pdf", output);
-            Assert.Contains("2048", output);
+            Assert.Contains("document.pdf", output.ToString());
+            Assert.Contains("2048", output.ToString());
         }
 
         [Fact]
         public void FileListingVisitor_Visit_Directory_ShouldOutputDirectoryName()
         {
             // Arrange
-            var visitor = new FileListingVisitor();
+            var output = new StringWriter();
+            var visitor = new FileListingVisitor { Output = output };
             var directory = new Directory("MyFolder");
 
             // Act
-            var output = CaptureConsoleOutput(() => visitor.Visit(directory));
+            visitor.Visit(directory);
 
             // Assert
-            Assert.Contains("MyFolder", output);
+            Assert.Contains("MyFolder", output.ToString());
         }
 
         [Fact]
@@ -164,20 +166,5 @@ namespace DotnetDesignPatterns.Tests.Behavioral.Visitor
             Assert.Empty(directory.Elements);
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

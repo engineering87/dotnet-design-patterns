@@ -1,4 +1,9 @@
 # Singleton Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/singleton.svg" alt="UML diagram of the Singleton pattern">
+</p>
+
 The Singleton Design Pattern is a creational design pattern that ensures a class has only one instance and provides a global point of access to that instance. This pattern is useful when exactly one object is needed to coordinate actions across the system.
 This repository presents two solutions for creating a Singleton in C#: the **Lazy** approach and the **Lock-based** approach.
 Both methods ensure that only one instance of the Singleton class is created, but the Lazy approach is generally preferred for its simplicity and built-in thread safety.
@@ -14,7 +19,7 @@ This ensures that no other class or object can instantiate the Singleton class o
 
 3. Static Instance Variable:
 A static variable is used to hold the single instance of the class. This static instance is shared across all instances of the class, making it accessible globally.
-The static variable ensures that the single instance is created and maintained throughout the application’s lifecycle.
+The static variable ensures that the single instance is created and maintained throughout the application's lifecycle.
 
 4. Global Access Method:
 A public static method (often named `GetInstance()` or `Instance()`) provides access to the single instance of the class. This method creates the instance if it does not already exist and returns it.
@@ -42,10 +47,9 @@ The Instance property provides access to the single instance of the Singleton. T
 The class constructor is private, preventing external code from creating multiple instances of the LazySingleton class. This is crucial to ensure that only one instance of the Singleton exists.
 
 * **Resource Management**:
-The `DoSomething` method is examples of how the Singleton might manage shared resources. For instance, a database connection or file access could be centralized in this Singleton, ensuring that resources are managed correctly and safely.
+The `DoSomething` method is an example of how the Singleton might manage shared resources. For instance, a database connection or file access could be centralized in this Singleton, ensuring that resources are managed correctly and safely.
 
-## Usage
-### Lazy Singleton
+## Usage of the Lazy Singleton
 ```csharp
 class Program
 {
@@ -60,7 +64,9 @@ class Program
 }
 ```
 
-## Performance Analysis of the LazySingleton Design Pattern
+## Cost of the LazySingleton Implementation
+
+These sections describe the cost of each approach in structural terms. They are not measurements: the repository has no benchmark project, so treat them as reasoning about where the work happens rather than as numbers you can quote.
 The LazySingleton implementation ensures optimal performance through thread-safe lazy initialization. Key points regarding its performance:
 
 * **Thread Safety**:
@@ -71,15 +77,14 @@ This makes it well-suited for multi-threaded environments, ensuring only a singl
 The instance is created only on first access, minimizing unnecessary resource consumption. If the singleton is never accessed, no object is created, thus reducing memory overhead.
 
 * **Overhead Reduction**:
-The Lazy<T> approach avoids the overhead of double-checked locking and manual synchronization techniques, which can degrade performance in some implementations.
+The `Lazy<T>` approach does not remove synchronization, it encapsulates it. In its default mode, `LazyThreadSafetyMode.ExecutionAndPublication`, `Lazy<T>` takes a lock on the first access so that the factory runs exactly once. What it removes is the need to write that synchronization by hand, and with it the class of mistakes that hand-written double-checked locking invites. After initialization the lock is no longer taken, so subsequent reads are cheap.
 
 * **Minimal Impact on Execution**:
 Since the singleton is initialized only once and reused, subsequent calls to Instance are fast and efficient, providing near-constant time access.
 
 This implementation offers a balance between performance, simplicity, and safety, making it ideal for scenarios where initialization can be delayed until necessary, and thread-safe operations are required.
 
-## Usage
-### Lock Singleton
+## Usage of the Lock Singleton
 ```csharp
 class Program
 {
@@ -94,7 +99,10 @@ class Program
 }
 ```
 
-## Performance Analysis of the LockSingleton Design Pattern
+## Correctness Note on the LockSingleton Implementation
+The instance field is declared `volatile`. Double-checked locking reads the field once outside the lock, and ECMA-335 does not guarantee that this read observes a fully constructed object without a volatile access, even though the Microsoft CLR gives release semantics to writes and makes the unadorned version work in practice. Declaring the field volatile makes the implementation correct by the specification rather than by the behaviour of one runtime. When lazy initialization is all that is needed, prefer `Lazy<T>`, which handles this for you.
+
+## Cost of the LockSingleton Implementation
 The LockSingleton class uses lazy initialization with double-checked locking to ensure thread-safe instantiation. Here is a breakdown of its performance:
 
 * **Thread Safety**:

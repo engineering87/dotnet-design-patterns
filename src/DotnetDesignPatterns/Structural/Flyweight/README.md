@@ -1,5 +1,9 @@
 # Flyweight Design Pattern
 
+<p align="center">
+  <img src="../../../../docs/diagrams/flyweight.svg" alt="UML diagram of the Flyweight pattern">
+</p>
+
 The Flyweight Design Pattern is a structural pattern that reduces the memory usage by sharing common parts of objects. It is particularly useful when dealing with a large number of objects that share a common state. The Flyweight Pattern helps to optimize memory usage by avoiding the creation of duplicate objects that share similar data.
 
 ## Key Concepts of the Flyweight Pattern

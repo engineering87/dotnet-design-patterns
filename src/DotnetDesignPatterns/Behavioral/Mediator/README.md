@@ -1,4 +1,9 @@
-﻿# Mediator Design Pattern
+# Mediator Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/mediator.svg" alt="UML diagram of the Mediator pattern">
+</p>
+
 The Mediator design pattern is a behavioral pattern that helps reduce the direct dependencies between objects by introducing a mediator that facilitates communication between them. In the context of file operations within an operating system, a mediator could be used to manage interactions between different components, such as a file manager, file operations, and the user interface.
 
 ## Key Concepts of the Mediator Pattern

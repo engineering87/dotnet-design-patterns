@@ -24,13 +24,14 @@ namespace DotnetDesignPatterns.Tests.Structural.Composite
         public void File_Display_ShouldOutputFileName()
         {
             // Arrange
-            var file = new File("document.pdf", 2048);
+            var output = new StringWriter();
+            var file = new File("document.pdf", 2048) { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => file.Display(2));
+            file.Display(2);
 
             // Assert
-            Assert.Contains("document.pdf", output);
+            Assert.Contains("document.pdf", output.ToString());
         }
 
         [Fact]
@@ -114,37 +115,39 @@ namespace DotnetDesignPatterns.Tests.Structural.Composite
         public void Directory_Display_ShouldOutputDirectoryAndChildren()
         {
             // Arrange
-            var directory = new Directory("Documents");
-            directory.Add(new File("file1.txt", 100));
-            directory.Add(new File("file2.txt", 200));
+            var output = new StringWriter();
+            var directory = new Directory("Documents") { Output = output };
+            directory.Add(new File("file1.txt", 100) { Output = output });
+            directory.Add(new File("file2.txt", 200) { Output = output });
 
             // Act
-            var output = CaptureConsoleOutput(() => directory.Display(0));
+            directory.Display(0);
 
             // Assert
-            Assert.Contains("Documents", output);
-            Assert.Contains("file1.txt", output);
-            Assert.Contains("file2.txt", output);
+            Assert.Contains("Documents", output.ToString());
+            Assert.Contains("file1.txt", output.ToString());
+            Assert.Contains("file2.txt", output.ToString());
         }
 
         [Fact]
         public void Directory_Display_NestedStructure_ShouldShowHierarchy()
         {
             // Arrange
-            var root = new Directory("Root");
-            var docs = new Directory("Documents");
-            docs.Add(new File("readme.txt", 50));
+            var output = new StringWriter();
+            var root = new Directory("Root") { Output = output };
+            var docs = new Directory("Documents") { Output = output };
+            docs.Add(new File("readme.txt", 50) { Output = output });
             root.Add(docs);
-            root.Add(new File("config.xml", 30));
+            root.Add(new File("config.xml", 30) { Output = output });
 
             // Act
-            var output = CaptureConsoleOutput(() => root.Display(0));
+            root.Display(0);
 
             // Assert
-            Assert.Contains("Root", output);
-            Assert.Contains("Documents", output);
-            Assert.Contains("readme.txt", output);
-            Assert.Contains("config.xml", output);
+            Assert.Contains("Root", output.ToString());
+            Assert.Contains("Documents", output.ToString());
+            Assert.Contains("readme.txt", output.ToString());
+            Assert.Contains("config.xml", output.ToString());
         }
 
         [Fact]
@@ -183,20 +186,5 @@ namespace DotnetDesignPatterns.Tests.Structural.Composite
             Assert.Equal(185, size); // 100 + 50 + 25 + 10 = 185
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

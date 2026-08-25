@@ -103,26 +103,28 @@ namespace DotnetDesignPatterns.Tests.Behavioral.Iterator
         public void File_PrintDetails_ShouldOutputFileName()
         {
             // Arrange
-            var file = new File("document.pdf");
+            var output = new StringWriter();
+            var file = new File("document.pdf") { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => file.PrintDetails());
+            file.PrintDetails();
 
             // Assert
-            Assert.Contains("document.pdf", output);
+            Assert.Contains("document.pdf", output.ToString());
         }
 
         [Fact]
         public void Directory_PrintDetails_ShouldOutputDirectoryName()
         {
             // Arrange
-            var directory = new Directory("MyFolder");
+            var output = new StringWriter();
+            var directory = new Directory("MyFolder") { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => directory.PrintDetails());
+            directory.PrintDetails();
 
             // Assert
-            Assert.Contains("MyFolder", output);
+            Assert.Contains("MyFolder", output.ToString());
         }
 
         [Fact]
@@ -141,20 +143,5 @@ namespace DotnetDesignPatterns.Tests.Behavioral.Iterator
             Assert.Same(file, iterator.Next());
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

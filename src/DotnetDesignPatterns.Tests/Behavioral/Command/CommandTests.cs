@@ -10,108 +10,151 @@ namespace DotnetDesignPatterns.Tests.Behavioral.Command
         public void CreateFileCommand_Execute_ShouldCreateFile()
         {
             // Arrange
-            var fileSystem = new FileSystemReceiver();
+            var output = new StringWriter();
+            var fileSystem = new FileSystemReceiver { Output = output };
             var command = new CreateFileCommand(fileSystem, "test.txt");
-            var output = CaptureConsoleOutput(() => command.Execute());
+            command.Execute();
 
             // Assert
-            Assert.Contains("Creating file: test.txt", output);
+            Assert.Contains("Creating file: test.txt", output.ToString());
         }
 
         [Fact]
         public void CreateFileCommand_Undo_ShouldDeleteFile()
         {
             // Arrange
-            var fileSystem = new FileSystemReceiver();
+            var output = new StringWriter();
+            var fileSystem = new FileSystemReceiver { Output = output };
             var command = new CreateFileCommand(fileSystem, "test.txt");
 
             // Act
-            var output = CaptureConsoleOutput(() => command.Undo());
+            command.Undo();
 
             // Assert
-            Assert.Contains("Deleting file: test.txt", output);
+            Assert.Contains("Deleting file: test.txt", output.ToString());
         }
 
         [Fact]
         public void WriteFileCommand_Execute_ShouldWriteToFile()
         {
             // Arrange
-            var fileSystem = new FileSystemReceiver();
-            var command = new WriteFileCommand(fileSystem, "test.txt", "Hello World");
+            var output = new StringWriter();
+            var fileSystem = new FileSystemReceiver { Output = output };
+            var command = new WriteFileCommand(fileSystem, "test.txt", "Hello World") { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => command.Execute());
+            command.Execute();
 
             // Assert
-            Assert.Contains("Writing to file: test.txt", output);
-            Assert.Contains("Content: Hello World", output);
+            Assert.Contains("Writing to file: test.txt", output.ToString());
+            Assert.Contains("Content: Hello World", output.ToString());
         }
 
         [Fact]
         public void DeleteFileCommand_Execute_ShouldDeleteFile()
         {
             // Arrange
-            var fileSystem = new FileSystemReceiver();
-            var command = new DeleteFileCommand(fileSystem, "test.txt");
+            var output = new StringWriter();
+            var fileSystem = new FileSystemReceiver { Output = output };
+            var command = new DeleteFileCommand(fileSystem, "test.txt") { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => command.Execute());
+            command.Execute();
 
             // Assert
-            Assert.Contains("Deleting file: test.txt", output);
+            Assert.Contains("Deleting file: test.txt", output.ToString());
         }
 
         [Fact]
         public void FileInvoker_Execute_ShouldInvokeCommand()
         {
             // Arrange
-            var fileSystem = new FileSystemReceiver();
+            var output = new StringWriter();
+            var fileSystem = new FileSystemReceiver { Output = output };
             var command = new CreateFileCommand(fileSystem, "invoker_test.txt");
-            var invoker = new FileInvoker(command);
+            var invoker = new FileInvoker();
 
             // Act
-            var output = CaptureConsoleOutput(() => invoker.Execute());
+            invoker.Execute(command);
 
             // Assert
-            Assert.Contains("Creating file: invoker_test.txt", output);
+            Assert.Contains("Creating file: invoker_test.txt", output.ToString());
         }
 
         [Fact]
-        public void FileInvoker_Undo_ShouldUndoCommand()
+        public void FileInvoker_Execute_ShouldRecordTheCommandInTheHistory()
         {
             // Arrange
-            var fileSystem = new FileSystemReceiver();
+            var output = new StringWriter();
+            var fileSystem = new FileSystemReceiver { Output = output };
             var command = new CreateFileCommand(fileSystem, "invoker_test.txt");
-            var invoker = new FileInvoker(command);
+            var invoker = new FileInvoker();
 
             // Act
-            var output = CaptureConsoleOutput(() => invoker.Undo());
+            invoker.Execute(command);
 
             // Assert
-            Assert.Contains("Deleting file: invoker_test.txt", output);
+            Assert.Single(invoker.History);
+            Assert.Same(command, invoker.History[0]);
         }
 
         [Fact]
-        public void FileInvoker_Constructor_ShouldThrowArgumentNullException_WhenCommandIsNull()
+        public void FileInvoker_Undo_ShouldUndoTheMostRecentCommand()
         {
-            // Act & Assert
-            Assert.Throws<ArgumentNullException>(() => new FileInvoker(null!));
+            // Arrange
+            var output = new StringWriter();
+            var fileSystem = new FileSystemReceiver { Output = output };
+            var invoker = new FileInvoker();
+            invoker.Execute(new CreateFileCommand(fileSystem, "first.txt"));
+            invoker.Execute(new CreateFileCommand(fileSystem, "second.txt"));
+
+            // Act
+            invoker.Undo();
+
+            // Assert
+            Assert.Contains("Deleting file: second.txt", output.ToString());
+            Assert.Single(invoker.History);
         }
 
-        private static string CaptureConsoleOutput(Action action)
+        [Fact]
+        public void FileInvoker_Undo_WithEmptyHistory_ShouldReportNothingToUndo()
         {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
+            // Arrange
+            var invoker = new FileInvoker();
+
+            // Act
+            var undone = invoker.Undo();
+
+            // Assert
+            Assert.False(undone);
         }
+
+        [Fact]
+        public void FileInvoker_UndoAll_ShouldEmptyTheHistory()
+        {
+            // Arrange
+            var output = new StringWriter();
+            var fileSystem = new FileSystemReceiver { Output = output };
+            var invoker = new FileInvoker();
+            invoker.Execute(new CreateFileCommand(fileSystem, "a.txt"));
+            invoker.Execute(new WriteFileCommand(fileSystem, "a.txt", "content") { Output = output });
+
+            // Act
+            invoker.UndoAll();
+
+            // Assert
+            Assert.Empty(invoker.History);
+        }
+
+        [Fact]
+        public void FileInvoker_Execute_ShouldThrowArgumentNullException_WhenCommandIsNull()
+        {
+            // Arrange
+            var invoker = new FileInvoker();
+
+            // Act & Assert
+            Assert.Throws<ArgumentNullException>(() => invoker.Execute(null!));
+        }
+
     }
 }

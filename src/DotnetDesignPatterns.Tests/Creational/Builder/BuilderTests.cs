@@ -1,4 +1,4 @@
-﻿// (c) 2024 Francesco Del Re <francesco.delre.87@gmail.com>
+// (c) 2024 Francesco Del Re <francesco.delre.87@gmail.com>
 // This code is licensed under MIT license (see LICENSE.txt for details)
 using DotnetDesignPatterns.Creational.Builder;
 
@@ -46,11 +46,11 @@ namespace DotnetDesignPatterns.Tests.Creational.Builder
 
             // Assert
             Assert.NotNull(config);
-            Assert.Null(config.OSName);
-            Assert.Null(config.Version);
-            Assert.Null(config.FileSystem);
+            Assert.Equal(string.Empty, config.OSName);
+            Assert.Equal(string.Empty, config.Version);
+            Assert.Equal(string.Empty, config.FileSystem);
             Assert.False(config.IsFirewallEnabled);
-            Assert.Null(config.NetworkSettings);
+            Assert.Equal(string.Empty, config.NetworkSettings);
         }
     }
 }

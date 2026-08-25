@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 904 505" width="904" height="505" role="img" aria-label="The twenty-three Gang of Four patterns">
+  <rect x="0.5" y="0.5" width="903" height="504" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <text x="24" y="42" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="18" font-weight="600" fill="#e6edf3">The twenty-three Gang of Four patterns</text>
+  <text x="24" y="64" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#8b949e">Three families, divided by what a pattern is concerned with.</text>
+  <rect x="24.0" y="96.0" width="268.0" height="361.0" rx="9" fill="#161b22" stroke="#30363d"/>
+  <path d="M24.0 105.0 a9 9 0 0 1 9 -9 h250.0 a9 9 0 0 1 9 9 v45.0 h-268.0 z" fill="#3fb950" fill-opacity="0.12"/>
+  <line x1="24.0" y1="150.0" x2="292.0" y2="150.0" stroke="#3fb950" stroke-opacity="0.42"/>
+  <rect x="40.0" y="111.0" width="3" height="14" rx="1.5" fill="#3fb950"/>
+  <text x="52.0" y="122.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#e6edf3">Creational</text>
+  <text x="52.0" y="139.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#3fb950">object creation</text>
+  <text x="276.0" y="122.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#6e7681" text-anchor="end">5</text>
+  <circle cx="44.0" cy="176.0" r="2.6" fill="#3fb950" fill-opacity="0.75"/>
+  <text x="56.0" y="180.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Abstract Factory</text>
+  <circle cx="44.0" cy="201.0" r="2.6" fill="#3fb950" fill-opacity="0.75"/>
+  <text x="56.0" y="205.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Builder</text>
+  <circle cx="44.0" cy="226.0" r="2.6" fill="#3fb950" fill-opacity="0.75"/>
+  <text x="56.0" y="230.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Factory Method</text>
+  <circle cx="44.0" cy="251.0" r="2.6" fill="#3fb950" fill-opacity="0.75"/>
+  <text x="56.0" y="255.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Prototype</text>
+  <circle cx="44.0" cy="276.0" r="2.6" fill="#3fb950" fill-opacity="0.75"/>
+  <text x="56.0" y="280.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Singleton</text>
+  <rect x="318.0" y="96.0" width="268.0" height="361.0" rx="9" fill="#161b22" stroke="#30363d"/>
+  <path d="M318.0 105.0 a9 9 0 0 1 9 -9 h250.0 a9 9 0 0 1 9 9 v45.0 h-268.0 z" fill="#58a6ff" fill-opacity="0.12"/>
+  <line x1="318.0" y1="150.0" x2="586.0" y2="150.0" stroke="#58a6ff" stroke-opacity="0.42"/>
+  <rect x="334.0" y="111.0" width="3" height="14" rx="1.5" fill="#58a6ff"/>
+  <text x="346.0" y="122.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#e6edf3">Structural</text>
+  <text x="346.0" y="139.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#58a6ff">object composition</text>
+  <text x="570.0" y="122.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#6e7681" text-anchor="end">7</text>
+  <circle cx="338.0" cy="176.0" r="2.6" fill="#58a6ff" fill-opacity="0.75"/>
+  <text x="350.0" y="180.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Adapter</text>
+  <circle cx="338.0" cy="201.0" r="2.6" fill="#58a6ff" fill-opacity="0.75"/>
+  <text x="350.0" y="205.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Bridge</text>
+  <circle cx="338.0" cy="226.0" r="2.6" fill="#58a6ff" fill-opacity="0.75"/>
+  <text x="350.0" y="230.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Composite</text>
+  <circle cx="338.0" cy="251.0" r="2.6" fill="#58a6ff" fill-opacity="0.75"/>
+  <text x="350.0" y="255.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Decorator</text>
+  <circle cx="338.0" cy="276.0" r="2.6" fill="#58a6ff" fill-opacity="0.75"/>
+  <text x="350.0" y="280.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Facade</text>
+  <circle cx="338.0" cy="301.0" r="2.6" fill="#58a6ff" fill-opacity="0.75"/>
+  <text x="350.0" y="305.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Flyweight</text>
+  <circle cx="338.0" cy="326.0" r="2.6" fill="#58a6ff" fill-opacity="0.75"/>
+  <text x="350.0" y="330.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Proxy</text>
+  <rect x="612.0" y="96.0" width="268.0" height="361.0" rx="9" fill="#161b22" stroke="#30363d"/>
+  <path d="M612.0 105.0 a9 9 0 0 1 9 -9 h250.0 a9 9 0 0 1 9 9 v45.0 h-268.0 z" fill="#bc8cff" fill-opacity="0.12"/>
+  <line x1="612.0" y1="150.0" x2="880.0" y2="150.0" stroke="#bc8cff" stroke-opacity="0.42"/>
+  <rect x="628.0" y="111.0" width="3" height="14" rx="1.5" fill="#bc8cff"/>
+  <text x="640.0" y="122.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#e6edf3">Behavioral</text>
+  <text x="640.0" y="139.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff">object interaction</text>
+  <text x="864.0" y="122.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#6e7681" text-anchor="end">11</text>
+  <circle cx="632.0" cy="176.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="180.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Chain of Responsibility</text>
+  <circle cx="632.0" cy="201.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="205.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Command</text>
+  <circle cx="632.0" cy="226.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="230.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Interpreter</text>
+  <circle cx="632.0" cy="251.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="255.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Iterator</text>
+  <circle cx="632.0" cy="276.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="280.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Mediator</text>
+  <circle cx="632.0" cy="301.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="305.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Memento</text>
+  <circle cx="632.0" cy="326.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="330.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Observer</text>
+  <circle cx="632.0" cy="351.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="355.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">State</text>
+  <circle cx="632.0" cy="376.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="380.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Strategy</text>
+  <circle cx="632.0" cy="401.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="405.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Template Method</text>
+  <circle cx="632.0" cy="426.0" r="2.6" fill="#bc8cff" fill-opacity="0.75"/>
+  <text x="644.0" y="430.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="12.5" fill="#e6edf3">Visitor</text>
+  <text x="24" y="487" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">Every pattern has a folder, an explanation, a worked example, and tests.</text>
+</svg>

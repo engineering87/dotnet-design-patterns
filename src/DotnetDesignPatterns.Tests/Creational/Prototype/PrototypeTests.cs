@@ -44,33 +44,15 @@ namespace DotnetDesignPatterns.Tests.Creational.Prototype
         public void DisplaySettings_ShouldOutputCorrectDetails()
         {
             // Arrange
-            var settings = new OperatingSystemSettings("MacOS", "12.5");
+            var output = new StringWriter();
+            var settings = new OperatingSystemSettings("MacOS", "12.5") { Output = output };
 
             // Act
-            var consoleOutput = CaptureConsoleOutput(() => settings.DisplaySettings());
+            settings.DisplaySettings();
 
             // Assert
-            Assert.Contains("OS Name: MacOS", consoleOutput);
-            Assert.Contains("Version: 12.5", consoleOutput);
-        }
-
-        // Helper method to capture console output
-        private string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using (var stringWriter = new StringWriter())
-                {
-                    Console.SetOut(stringWriter);
-                    action.Invoke();
-                    return stringWriter.ToString();
-                }
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
+            Assert.Contains("OS Name: MacOS", output.ToString());
+            Assert.Contains("Version: 12.5", output.ToString());
         }
     }
 }

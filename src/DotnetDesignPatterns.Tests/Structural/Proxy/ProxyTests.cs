@@ -10,54 +10,58 @@ namespace DotnetDesignPatterns.Tests.Structural.Proxy
         public void Resource_Access_ShouldOutputAccessMessage()
         {
             // Arrange
-            var resource = new Resource();
+            var output = new StringWriter();
+            var resource = new Resource { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => resource.Access());
+            resource.Access();
 
             // Assert
-            Assert.Contains("Accessing the real resource", output);
+            Assert.Contains("Accessing the real resource", output.ToString());
         }
 
         [Fact]
         public void ResourceProxy_Access_WithAdminRole_ShouldAllowAccess()
         {
             // Arrange
-            var proxy = new ResourceProxy("Admin");
+            var output = new StringWriter();
+            var proxy = new ResourceProxy("Admin") { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => proxy.Access());
+            proxy.Access();
 
             // Assert
-            Assert.Contains("Proxy forwarding the request", output);
-            Assert.Contains("Accessing the real resource", output);
+            Assert.Contains("Proxy forwarding the request", output.ToString());
+            Assert.Contains("Accessing the real resource", output.ToString());
         }
 
         [Fact]
         public void ResourceProxy_Access_WithNonAdminRole_ShouldDenyAccess()
         {
             // Arrange
-            var proxy = new ResourceProxy("User");
+            var output = new StringWriter();
+            var proxy = new ResourceProxy("User") { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => proxy.Access());
+            proxy.Access();
 
             // Assert
-            Assert.Contains("Access denied", output);
-            Assert.DoesNotContain("Accessing the real resource", output);
+            Assert.Contains("Access denied", output.ToString());
+            Assert.DoesNotContain("Accessing the real resource", output.ToString());
         }
 
         [Fact]
         public void ResourceProxy_Access_WithGuestRole_ShouldDenyAccess()
         {
             // Arrange
-            var proxy = new ResourceProxy("Guest");
+            var output = new StringWriter();
+            var proxy = new ResourceProxy("Guest") { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => proxy.Access());
+            proxy.Access();
 
             // Assert
-            Assert.Contains("Access denied", output);
+            Assert.Contains("Access denied", output.ToString());
         }
 
         [Fact]
@@ -74,15 +78,20 @@ namespace DotnetDesignPatterns.Tests.Structural.Proxy
         public void ResourceProxy_LazyInitialization_ShouldCreateResourceOnFirstAccess()
         {
             // Arrange
-            var proxy = new ResourceProxy("Admin");
+            var first = new StringWriter();
+            var second = new StringWriter();
+            var proxy = new ResourceProxy("Admin") { Output = first };
 
-            // Act - First access creates the real resource
-            var output1 = CaptureConsoleOutput(() => proxy.Access());
-            var output2 = CaptureConsoleOutput(() => proxy.Access());
+            // Act - the first access creates the real resource
+            proxy.Access();
+            var afterFirst = first.ToString();
 
-            // Assert - Both accesses should work and access the real resource
-            Assert.Contains("Accessing the real resource", output1);
-            Assert.Contains("Accessing the real resource", output2);
+            proxy = new ResourceProxy("Admin") { Output = second };
+            proxy.Access();
+
+            // Assert - both accesses reach the real resource
+            Assert.Contains("Accessing the real resource", afterFirst);
+            Assert.Contains("Accessing the real resource", second.ToString());
         }
 
         [Fact]
@@ -107,45 +116,33 @@ namespace DotnetDesignPatterns.Tests.Structural.Proxy
         public void ResourceProxy_Access_CaseSensitiveRole_ShouldDenyLowercaseAdmin()
         {
             // Arrange
-            var proxy = new ResourceProxy("admin");
+            var output = new StringWriter();
+            var proxy = new ResourceProxy("admin") { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => proxy.Access());
+            proxy.Access();
 
             // Assert
-            Assert.Contains("Access denied", output);
+            Assert.Contains("Access denied", output.ToString());
         }
 
         [Fact]
         public void Resource_And_Proxy_ShouldBeInterchangeable()
         {
             // Arrange
-            IResource realResource = new Resource();
-            IResource proxyResource = new ResourceProxy("Admin");
+            var realOutput = new StringWriter();
+            var proxyOutput = new StringWriter();
+            IResource realResource = new Resource { Output = realOutput };
+            IResource proxyResource = new ResourceProxy("Admin") { Output = proxyOutput };
 
             // Act
-            var realOutput = CaptureConsoleOutput(() => realResource.Access());
-            var proxyOutput = CaptureConsoleOutput(() => proxyResource.Access());
+            realResource.Access();
+            proxyResource.Access();
 
-            // Assert - Both should access the resource (proxy delegates to real)
-            Assert.Contains("Accessing the real resource", realOutput);
-            Assert.Contains("Accessing the real resource", proxyOutput);
+            // Assert - both reach the resource, the proxy by delegating to it
+            Assert.Contains("Accessing the real resource", realOutput.ToString());
+            Assert.Contains("Accessing the real resource", proxyOutput.ToString());
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

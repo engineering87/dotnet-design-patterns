@@ -1,5 +1,9 @@
 # Prototype Design Pattern
 
+<p align="center">
+  <img src="../../../../docs/diagrams/prototype.svg" alt="UML diagram of the Prototype pattern">
+</p>
+
 The Prototype Design Pattern is a creational design pattern that allows objects to be copied rather than created from scratch. It is particularly useful when the creation of an object is complex or expensive and when you need to create multiple instances of an object with the same structure but different data. The Prototype Pattern helps in cloning existing objects, making it easier to create new objects based on prototypes.
 
 ## Key Concepts of the Prototype Pattern

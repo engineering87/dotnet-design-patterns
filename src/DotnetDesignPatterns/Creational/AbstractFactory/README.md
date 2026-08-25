@@ -1,7 +1,12 @@
 # Abstract Factory Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/abstract-factory.svg" alt="UML diagram of the Abstract Factory pattern">
+</p>
+
 The Abstract Factory Design Pattern is a creational pattern that provides an interface for creating families of related or dependent objects without specifying their concrete classes. It allows a system to be independent of how its objects are created, composed, or represented.
 
-## Key Concepts of the Abstract Factory Pattern    
+## Key Concepts of the Abstract Factory Pattern
 1. Abstract Factory
 Definition: An interface or abstract class that declares the methods for creating abstract products. It defines a set of related products (or objects) that the factory can create.
 Role: The abstract factory is responsible for producing families of related objects (like creating a set of UI elements for a theme or specific components for an operating system) without specifying their concrete types.
@@ -20,14 +25,14 @@ Role: The actual products produced by a concrete factory. For example, a Windows
 
 5. Client
 Definition: The part of the system that interacts with the abstract factory and abstract products.
-Role: The client uses only interfaces defined by the abstract factory and abstract products. It doesn’t know or depend on the specific concrete classes, which allows flexibility in changing the underlying product family (e.g., switching from a "Windows" UI to a "Linux" UI) without changing the client code.
+Role: The client uses only interfaces defined by the abstract factory and abstract products. It doesn't know or depend on the specific concrete classes, which allows flexibility in changing the underlying product family (e.g., switching from a "Windows" UI to a "Linux" UI) without changing the client code.
 
 ## Code Explanation
 * **Interface IOperatingSystemFactory**:
-This interface is responsible for producing families of related objects—in this case, different operating systems. It abstracts the creation process, allowing the client to use any specific factory without knowing the details of the underlying implementations.
+This interface is responsible for producing families of related objects, in this case, different operating systems. It abstracts the creation process, allowing the client to use any specific factory without knowing the details of the underlying implementations.
 
 * **Concrete Factory WindowsOSFactory, LinuxOSFactory**:
-These classes are concrete implementations of the `IOperatingSystemFactory` interface. Each factory is responsible for creating a specific family of products—in this case, either a Windows or Linux operating system. This ensures that all products created by a factory are compatible with each other.
+These classes are concrete implementations of the `IOperatingSystemFactory` interface. Each factory is responsible for creating a specific family of products, in this case, either a Windows or Linux operating system. This ensures that all products created by a factory are compatible with each other.
 
 * **Abstract Class IOperatingSystem**:
 This interface defines the common behaviors for all operating systems. It acts as a contract that all concrete operating systems (like WindowsOS and LinuxOS) must fulfill, ensuring that they implement the specified methods.

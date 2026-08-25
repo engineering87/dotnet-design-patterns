@@ -10,99 +10,105 @@ namespace DotnetDesignPatterns.Tests.Behavioral.ChainOfResponsibility
         public void ValidationHandler_HandleRequest_ShouldLogValidation()
         {
             // Arrange
-            var handler = new ValidationHandler();
+            var output = new StringWriter();
+            var handler = new ValidationHandler { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => handler.HandleRequest("read", "test.txt"));
+            handler.HandleRequest("read", "test.txt");
 
             // Assert
-            Assert.Contains("[VALIDATION]", output);
-            Assert.Contains("read", output);
-            Assert.Contains("test.txt", output);
+            Assert.Contains("[VALIDATION]", output.ToString());
+            Assert.Contains("read", output.ToString());
+            Assert.Contains("test.txt", output.ToString());
         }
 
         [Fact]
         public void AuthorizationHandler_HandleRequest_ShouldCheckPermissions()
         {
             // Arrange
-            var handler = new AuthorizationHandler();
+            var output = new StringWriter();
+            var handler = new AuthorizationHandler { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => handler.HandleRequest("read", "test.txt"));
+            handler.HandleRequest("read", "test.txt");
 
             // Assert
-            Assert.Contains("[AUTHORIZATION]", output);
-            Assert.Contains("read", output);
-            Assert.Contains("test.txt", output);
+            Assert.Contains("[AUTHORIZATION]", output.ToString());
+            Assert.Contains("read", output.ToString());
+            Assert.Contains("test.txt", output.ToString());
         }
 
         [Fact]
         public void AuthorizationHandler_HandleRequest_DeleteOperation_ShouldDenyPermission()
         {
             // Arrange
-            var handler = new AuthorizationHandler();
+            var output = new StringWriter();
+            var handler = new AuthorizationHandler { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => handler.HandleRequest("delete", "test.txt"));
+            handler.HandleRequest("delete", "test.txt");
 
             // Assert
-            Assert.Contains("Permission denied", output);
+            Assert.Contains("Permission denied", output.ToString());
         }
 
         [Fact]
         public void LoggingHandler_HandleRequest_ShouldLogOperation()
         {
             // Arrange
-            var handler = new LoggingHandler();
+            var output = new StringWriter();
+            var handler = new LoggingHandler { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => handler.HandleRequest("write", "document.pdf"));
+            handler.HandleRequest("write", "document.pdf");
 
             // Assert
-            Assert.Contains("[LOG]", output);
-            Assert.Contains("write", output);
-            Assert.Contains("document.pdf", output);
+            Assert.Contains("[LOG]", output.ToString());
+            Assert.Contains("write", output.ToString());
+            Assert.Contains("document.pdf", output.ToString());
         }
 
         [Fact]
         public void ChainOfHandlers_ShouldProcessInOrder()
         {
             // Arrange
-            var validationHandler = new ValidationHandler();
-            var authorizationHandler = new AuthorizationHandler();
-            var loggingHandler = new LoggingHandler();
+            var output = new StringWriter();
+            var validationHandler = new ValidationHandler { Output = output };
+            var authorizationHandler = new AuthorizationHandler { Output = output };
+            var loggingHandler = new LoggingHandler { Output = output };
 
             validationHandler.SetNext(authorizationHandler);
             authorizationHandler.SetNext(loggingHandler);
 
             // Act
-            var output = CaptureConsoleOutput(() => validationHandler.HandleRequest("read", "test.txt"));
+            validationHandler.HandleRequest("read", "test.txt");
 
             // Assert
-            Assert.Contains("[VALIDATION]", output);
-            Assert.Contains("[AUTHORIZATION]", output);
-            Assert.Contains("[LOG]", output);
+            Assert.Contains("[VALIDATION]", output.ToString());
+            Assert.Contains("[AUTHORIZATION]", output.ToString());
+            Assert.Contains("[LOG]", output.ToString());
         }
 
         [Fact]
         public void ChainOfHandlers_DeleteOperation_ShouldStopAtAuthorization()
         {
             // Arrange
-            var validationHandler = new ValidationHandler();
-            var authorizationHandler = new AuthorizationHandler();
-            var loggingHandler = new LoggingHandler();
+            var output = new StringWriter();
+            var validationHandler = new ValidationHandler { Output = output };
+            var authorizationHandler = new AuthorizationHandler { Output = output };
+            var loggingHandler = new LoggingHandler { Output = output };
 
             validationHandler.SetNext(authorizationHandler);
             authorizationHandler.SetNext(loggingHandler);
 
             // Act
-            var output = CaptureConsoleOutput(() => validationHandler.HandleRequest("delete", "test.txt"));
+            validationHandler.HandleRequest("delete", "test.txt");
 
             // Assert
-            Assert.Contains("[VALIDATION]", output);
-            Assert.Contains("[AUTHORIZATION]", output);
-            Assert.Contains("Permission denied", output);
-            Assert.DoesNotContain("[LOG]", output);
+            Assert.Contains("[VALIDATION]", output.ToString());
+            Assert.Contains("[AUTHORIZATION]", output.ToString());
+            Assert.Contains("Permission denied", output.ToString());
+            Assert.DoesNotContain("[LOG]", output.ToString());
         }
 
         [Fact]
@@ -116,20 +122,5 @@ namespace DotnetDesignPatterns.Tests.Behavioral.ChainOfResponsibility
             Assert.Null(exception);
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

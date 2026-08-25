@@ -10,30 +10,32 @@ namespace DotnetDesignPatterns.Tests.Structural.Bridge
         public void TextFileManager_SaveFile_WithWindowsFileSystem_ShouldUseWindowsImplementation()
         {
             // Arrange
-            var windowsFileSystem = new WindowsFileSystem();
+            var output = new StringWriter();
+            var windowsFileSystem = new WindowsFileSystem { Output = output };
             var fileManager = new TextFileManager(windowsFileSystem);
 
             // Act
-            var output = CaptureConsoleOutput(() => fileManager.SaveFile("test.txt", "Hello World"));
+            fileManager.SaveFile("test.txt", "Hello World");
 
             // Assert
-            Assert.Contains("Windows", output);
-            Assert.Contains("test.txt", output);
+            Assert.Contains("Windows", output.ToString());
+            Assert.Contains("test.txt", output.ToString());
         }
 
         [Fact]
         public void TextFileManager_SaveFile_WithLinuxFileSystem_ShouldUseLinuxImplementation()
         {
             // Arrange
-            var linuxFileSystem = new LinuxFileSystem();
+            var output = new StringWriter();
+            var linuxFileSystem = new LinuxFileSystem { Output = output };
             var fileManager = new TextFileManager(linuxFileSystem);
 
             // Act
-            var output = CaptureConsoleOutput(() => fileManager.SaveFile("test.txt", "Hello World"));
+            fileManager.SaveFile("test.txt", "Hello World");
 
             // Assert
-            Assert.Contains("Linux", output);
-            Assert.Contains("test.txt", output);
+            Assert.Contains("Linux", output.ToString());
+            Assert.Contains("test.txt", output.ToString());
         }
 
         [Fact]
@@ -70,56 +72,60 @@ namespace DotnetDesignPatterns.Tests.Structural.Bridge
         public void WindowsFileSystem_WriteToFile_ShouldOutputCorrectMessage()
         {
             // Arrange
-            var fileSystem = new WindowsFileSystem();
+            var output = new StringWriter();
+            var fileSystem = new WindowsFileSystem { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => fileSystem.WriteToFile("document.pdf", "content"));
+            fileSystem.WriteToFile("document.pdf", "content");
 
             // Assert
-            Assert.Contains("Writing to Windows file", output);
-            Assert.Contains("document.pdf", output);
+            Assert.Contains("Writing to Windows file", output.ToString());
+            Assert.Contains("document.pdf", output.ToString());
         }
 
         [Fact]
         public void LinuxFileSystem_WriteToFile_ShouldOutputCorrectMessage()
         {
             // Arrange
-            var fileSystem = new LinuxFileSystem();
+            var output = new StringWriter();
+            var fileSystem = new LinuxFileSystem { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => fileSystem.WriteToFile("document.pdf", "content"));
+            fileSystem.WriteToFile("document.pdf", "content");
 
             // Assert
-            Assert.Contains("Writing to Linux file", output);
-            Assert.Contains("document.pdf", output);
+            Assert.Contains("Writing to Linux file", output.ToString());
+            Assert.Contains("document.pdf", output.ToString());
         }
 
         [Fact]
         public void WindowsFileSystem_ReadFromFile_ShouldOutputCorrectMessage()
         {
             // Arrange
-            var fileSystem = new WindowsFileSystem();
+            var output = new StringWriter();
+            var fileSystem = new WindowsFileSystem { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => fileSystem.ReadFromFile("report.txt"));
+            fileSystem.ReadFromFile("report.txt");
 
             // Assert
-            Assert.Contains("Reading from Windows file", output);
-            Assert.Contains("report.txt", output);
+            Assert.Contains("Reading from Windows file", output.ToString());
+            Assert.Contains("report.txt", output.ToString());
         }
 
         [Fact]
         public void LinuxFileSystem_ReadFromFile_ShouldOutputCorrectMessage()
         {
             // Arrange
-            var fileSystem = new LinuxFileSystem();
+            var output = new StringWriter();
+            var fileSystem = new LinuxFileSystem { Output = output };
 
             // Act
-            var output = CaptureConsoleOutput(() => fileSystem.ReadFromFile("report.txt"));
+            fileSystem.ReadFromFile("report.txt");
 
             // Assert
-            Assert.Contains("Reading from Linux file", output);
-            Assert.Contains("report.txt", output);
+            Assert.Contains("Reading from Linux file", output.ToString());
+            Assert.Contains("report.txt", output.ToString());
         }
 
         [Fact]
@@ -140,20 +146,5 @@ namespace DotnetDesignPatterns.Tests.Structural.Bridge
             Assert.Contains("Linux", linuxContent);
         }
 
-        private static string CaptureConsoleOutput(Action action)
-        {
-            var originalOutput = Console.Out;
-            try
-            {
-                using var stringWriter = new StringWriter();
-                Console.SetOut(stringWriter);
-                action.Invoke();
-                return stringWriter.ToString();
-            }
-            finally
-            {
-                Console.SetOut(originalOutput);
-            }
-        }
     }
 }

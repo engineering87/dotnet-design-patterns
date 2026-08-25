@@ -1,5 +1,9 @@
 # Proxy Design Pattern
 
+<p align="center">
+  <img src="../../../../docs/diagrams/proxy.svg" alt="UML diagram of the Proxy pattern">
+</p>
+
 The Proxy Design Pattern is a structural pattern that provides a surrogate or placeholder for another object to control access to it. Proxies can be used for various purposes, including access control, lazy initialization, logging, and more. The proxy pattern involves creating an interface or abstract class that both the real subject and proxy class implement, allowing the proxy to act as an intermediary.
 
 ## Key Concepts of the Proxy Pattern

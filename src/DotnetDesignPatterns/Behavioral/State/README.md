@@ -1,4 +1,9 @@
-﻿# State Design Pattern
+# State Design Pattern
+
+<p align="center">
+  <img src="../../../../docs/diagrams/state.svg" alt="UML diagram of the State pattern">
+</p>
+
 The State design pattern is a behavioral pattern that allows an object to alter its behavior when its internal state changes. It appears as if the object changed its class. This pattern is useful when an object needs to change its behavior based on its state, and it can help in managing state-specific behavior in a cleaner and more organized way.
 
 ## Key Concepts of the State Pattern
@@ -39,7 +44,7 @@ Purpose: Ensures that behavior changes in a controlled manner, and new states ca
 Definition: `IFileState` interface define the methods that concrete states will implement.
 Purpose: Declares the state-specific behaviors for opening, closing, and editing a file.
 
-* **Concrete States**:  
+* **Concrete States**:
     - CreatedState:
         - Purpose: Represents the initial state when the file is created but not yet opened.
         - Behavior: Can transition to the OpenedState when the file is opened. Cannot close or edit.

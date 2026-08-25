@@ -1,0 +1,18 @@
+name: Improvement
+description: Suggest a clearer example, a better explanation, or an additional test
+labels: [enhancement]
+body:
+  - type: input
+    id: area
+    attributes:
+      label: Area
+      description: The pattern or document you would like to see improved
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change, and why it would make the repository clearer
+    validations:
+      required: true

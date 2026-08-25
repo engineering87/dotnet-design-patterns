@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1056 368" width="1056" height="368" role="img" aria-label="Visitor">
+  <rect x="0.5" y="0.5" width="1055" height="367" rx="10" fill="#0d1117" stroke="#21262d"/>
+  <rect x="24" y="22" width="3" height="14" rx="1.5" fill="#bc8cff"/>
+  <text x="36" y="34" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3">Visitor</text>
+  <path d="M120.0 213.0 L120.0 151.0" fill="none" stroke="#bc8cff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="120.0,140.0 126.0,151.0 114.0,151.0" fill="#0d1117" stroke="#bc8cff" stroke-width="1.4"/>
+  <path d="M402.0 213.0 L402.0 176.5 L120.0 176.5 L120.0 151.0" fill="none" stroke="#bc8cff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="120.0,140.0 126.0,151.0 114.0,151.0" fill="#0d1117" stroke="#bc8cff" stroke-width="1.4"/>
+  <path d="M687.5 213.0 L687.5 170.0" fill="none" stroke="#bc8cff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="687.5,159.0 693.5,170.0 681.5,170.0" fill="#0d1117" stroke="#bc8cff" stroke-width="1.4"/>
+  <path d="M932.5 213.0 L932.5 186.0 L687.5 186.0 L687.5 170.0" fill="none" stroke="#bc8cff" stroke-width="1.4" stroke-linejoin="round"/>
+  <polygon points="687.5,159.0 693.5,170.0 681.5,170.0" fill="#0d1117" stroke="#bc8cff" stroke-width="1.4"/>
+  <path d="M216.0 99.0 L579.0 108.3" fill="none" stroke="#6e7681" stroke-width="1.4" stroke-linejoin="round" stroke-dasharray="5 4"/>
+  <polygon points="588.0,108.5 578.9,112.5 579.1,104.1" fill="#6e7681"/>
+  <rect x="370.8" y="95.7" width="53.4" height="16" rx="4" fill="#0d1117"/>
+  <text x="397.5" y="107.7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10" fill="#6e7681" text-anchor="middle">accepts</text>
+  <rect x="24.0" y="58.0" width="192" height="82" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 65.0 a7 7 0 0 1 7 -7 h178 a7 7 0 0 1 7 7 v23 h-192 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="88.0" x2="216.0" y2="88.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="120.0" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IFileSystemElement</text>
+  <text x="120.0" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="38.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Accept(visitor) : void</text>
+  <rect x="588.0" y="58.0" width="199" height="101" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M588.0 65.0 a7 7 0 0 1 7 -7 h185 a7 7 0 0 1 7 7 v23 h-199 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="588.0" y1="88.0" x2="787.0" y2="88.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="687.5" y="78.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">IFileSystemVisitor</text>
+  <text x="687.5" y="106.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" fill="#bc8cff" text-anchor="middle" letter-spacing="0.4">interface</text>
+  <text x="602.0" y="124.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Visit(file) : void</text>
+  <text x="602.0" y="143.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Visit(directory) : void</text>
+  <rect x="24.0" y="213.0" width="192" height="105" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M24.0 220.0 a7 7 0 0 1 7 -7 h178 a7 7 0 0 1 7 7 v23 h-192 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="24.0" y1="243.0" x2="216.0" y2="243.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="120.0" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">File</text>
+  <text x="38.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Name : string</text>
+  <text x="38.0" y="283.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Size : long</text>
+  <text x="38.0" y="302.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Accept(visitor) : void</text>
+  <rect x="262.0" y="213.0" width="280" height="105" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M262.0 220.0 a7 7 0 0 1 7 -7 h266 a7 7 0 0 1 7 7 v23 h-280 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="262.0" y1="243.0" x2="542.0" y2="243.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="402.0" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">Directory</text>
+  <text x="276.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Elements : List&lt;IFileSystemElement&gt;</text>
+  <text x="276.0" y="283.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ AddElement(element) : void</text>
+  <text x="276.0" y="302.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Accept(visitor) : void</text>
+  <rect x="603.0" y="213.0" width="169" height="67" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M603.0 220.0 a7 7 0 0 1 7 -7 h155 a7 7 0 0 1 7 7 v23 h-169 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="603.0" y1="243.0" x2="772.0" y2="243.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="687.5" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">FileListingVisitor</text>
+  <text x="617.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Visit(file) : void</text>
+  <rect x="833.0" y="213.0" width="199" height="86" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <path d="M833.0 220.0 a7 7 0 0 1 7 -7 h185 a7 7 0 0 1 7 7 v23 h-199 z" fill="#bc8cff" fill-opacity="0.13"/>
+  <line x1="833.0" y1="243.0" x2="1032.0" y2="243.0" stroke="#bc8cff" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="932.5" y="233.0" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">SizeCalculationVisitor</text>
+  <text x="847.0" y="264.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ TotalSize : long</text>
+  <text x="847.0" y="283.0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#8b949e">+ Visit(file) : void</text>
+  <text x="24" y="348" font-family="Segoe UI, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif" font-size="11" fill="#6e7681">Adding an operation means adding a visitor, without touching the elements.</text>
+</svg>

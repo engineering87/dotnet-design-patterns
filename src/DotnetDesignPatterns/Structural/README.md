@@ -1,5 +1,5 @@
 # Structural Design Patterns
-Structural design patterns are a category of design patterns focused on how objects and classes are composed to form larger structures. These patterns help ensure that if one part of a system changes, the entire system doesn’t need to be modified. They aim to make the components of a system work together more effectively and efficiently. Here are the key concepts common to structural design patterns:
+Structural design patterns are a category of design patterns focused on how objects and classes are composed to form larger structures. These patterns help ensure that if one part of a system changes, the entire system doesn't need to be modified. They aim to make the components of a system work together more effectively and efficiently. Here are the key concepts common to structural design patterns:
 
 ## Key Concepts of Structural Design Patterns
 1. Composition over Inheritance:
