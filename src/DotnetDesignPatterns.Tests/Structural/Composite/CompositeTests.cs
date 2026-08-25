@@ -1,7 +1,7 @@
-// (c) 2024 Francesco Del Re <francesco.delre.87@gmail.com>
+﻿// (c) 2024 Francesco Del Re <francesco.delre.87@gmail.com>
 // This code is licensed under MIT license (see LICENSE.txt for details)
-using File = DotnetDesignPatterns.Structural.Composite.File;
 using Directory = DotnetDesignPatterns.Structural.Composite.Directory;
+using File = DotnetDesignPatterns.Structural.Composite.File;
 
 namespace DotnetDesignPatterns.Tests.Structural.Composite
 {

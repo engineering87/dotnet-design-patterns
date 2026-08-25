@@ -16,6 +16,10 @@ indent_size = 2
 indent_size = 2
 
 [*.cs]
+# Visual Studio writes C# files as UTF-8 with a byte order mark, and this is what
+# the repository already used. Declaring it keeps dotnet format and the IDE in step.
+charset = utf-8-bom
+
 # Organisation of using directives
 dotnet_sort_system_directives_first = true
 csharp_using_directive_placement = outside_namespace:suggestion
